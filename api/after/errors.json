@@ -1,0 +1,272 @@
+[
+  {
+    "case": "nodecode-invalid-key_chat",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/chat/completions",
+      "body": {
+        "model": "nodecode-invalid-key",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 64
+      }
+    },
+    "status": 401,
+    "headers": {
+      "x-litellm-call-id": "a3047fab-4a17-4835-880e-e989101f597e",
+      "x-litellm-model-id": "b0441b46525c94a97ba58e256178aa0e472a1ebecfaf3ea692c150cef8d3aa45",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.AuthenticationError: AuthenticationError: NodecodeException - Invalid API key. Keys start with `sk-nc-`; make one at https://nodecode.ai/account/keys or run `nodecode login`.\n\nLiteLLM: model group 'nodecode-invalid-key' failed with the error above. No fallback was attempted.",
+        "type": "authentication_error",
+        "param": null,
+        "code": "401",
+        "provider_specific_fields": {
+          "code": "invalid_api_key",
+          "request_id": "01a2160f-ece8-7713-988f-ffde28b546ba"
+        }
+      }
+    }
+  },
+  {
+    "case": "nodecode-invalid-key_responses",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/responses",
+      "body": {
+        "model": "nodecode-invalid-key",
+        "input": "What is 19 * 17? Answer with the number only.",
+        "max_output_tokens": 64
+      }
+    },
+    "status": 401,
+    "headers": {
+      "x-litellm-call-id": "74b6f56a-2fd1-4e86-b330-03916e5c22f0",
+      "x-litellm-model-id": "b0441b46525c94a97ba58e256178aa0e472a1ebecfaf3ea692c150cef8d3aa45",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.AuthenticationError: AuthenticationError: NodecodeException - Invalid API key. Keys start with `sk-nc-`; make one at https://nodecode.ai/account/keys or run `nodecode login`.\n\nLiteLLM: model group 'nodecode-invalid-key' failed with the error above. No fallback was attempted.",
+        "type": "authentication_error",
+        "param": null,
+        "code": "401",
+        "provider_specific_fields": {
+          "code": "invalid_api_key",
+          "request_id": "01a21610-04f4-7d52-b112-caa71883ff00"
+        }
+      }
+    }
+  },
+  {
+    "case": "nodecode-invalid-key_messages",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/messages",
+      "body": {
+        "model": "nodecode-invalid-key",
+        "max_tokens": 64,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ]
+      }
+    },
+    "status": 401,
+    "headers": {
+      "x-litellm-call-id": "5eb9e417-3949-4641-8293-b7438e62bb0e",
+      "x-litellm-model-id": "b0441b46525c94a97ba58e256178aa0e472a1ebecfaf3ea692c150cef8d3aa45",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "type": "error",
+      "error": {
+        "type": "authentication_error",
+        "message": "litellm.AuthenticationError: AuthenticationError: NodecodeException - {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"Invalid API key. Keys start with `sk-nc-`; make one at https://nodecode.ai/account/keys or run `nodecode login`.\",\"code\":\"invalid_api_key\"},\"request_id\":\"01a21610-1d31-7b03-add6-65ae265ec513\"}\n\nLiteLLM: model group 'nodecode-invalid-key' failed with the error above. No fallback was attempted."
+      }
+    }
+  },
+  {
+    "case": "nodecode-invalid-key_chat_stream",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/chat/completions",
+      "body": {
+        "model": "nodecode-invalid-key",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 64,
+        "stream": true
+      }
+    },
+    "status": 401,
+    "headers": {
+      "x-litellm-call-id": "f0c52389-4de1-4c23-ae1f-5e38f8545f88",
+      "x-litellm-model-id": "b0441b46525c94a97ba58e256178aa0e472a1ebecfaf3ea692c150cef8d3aa45",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.AuthenticationError: AuthenticationError: NodecodeException - Invalid API key. Keys start with `sk-nc-`; make one at https://nodecode.ai/account/keys or run `nodecode login`.\n\nLiteLLM: model group 'nodecode-invalid-key' failed with the error above. No fallback was attempted.",
+        "type": "authentication_error",
+        "param": null,
+        "code": "401",
+        "provider_specific_fields": {
+          "code": "invalid_api_key",
+          "request_id": "01a21610-3556-79d2-b646-8c61b2567cb3"
+        }
+      }
+    }
+  },
+  {
+    "case": "nodecode-missing-model_chat",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/chat/completions",
+      "body": {
+        "model": "nodecode-missing-model",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 64
+      }
+    },
+    "status": 404,
+    "headers": {
+      "x-litellm-call-id": "b44ba984-0038-485d-a243-eac7969bc5d0",
+      "x-litellm-model-id": "c2395547a7af21fb836224a2a8ca9c7f8bb7896d57d040ea778af7d04f0c61bf",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.NotFoundError: NodecodeException - The model `nodecode-cyber-v0` does not exist. GET /v1/models lists the ones on your plan.\n\nLiteLLM: model group 'nodecode-missing-model' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "404",
+        "provider_specific_fields": {
+          "code": "model_not_found",
+          "request_id": "01a21610-4d5a-74a1-ae43-60ada34f6b47"
+        }
+      }
+    }
+  },
+  {
+    "case": "nodecode-missing-model_responses",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/responses",
+      "body": {
+        "model": "nodecode-missing-model",
+        "input": "What is 19 * 17? Answer with the number only.",
+        "max_output_tokens": 64
+      }
+    },
+    "status": 404,
+    "headers": {
+      "x-litellm-call-id": "88654b06-1b5a-4162-ada3-e9b69b007c0d",
+      "x-litellm-model-id": "c2395547a7af21fb836224a2a8ca9c7f8bb7896d57d040ea778af7d04f0c61bf",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.NotFoundError: NodecodeException - The model `nodecode-cyber-v0` does not exist. GET /v1/models lists the ones on your plan.\n\nLiteLLM: model group 'nodecode-missing-model' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "404",
+        "provider_specific_fields": {
+          "code": "model_not_found",
+          "request_id": "01a21610-6552-77f0-9d03-b6d03dce2173"
+        }
+      }
+    }
+  },
+  {
+    "case": "nodecode-missing-model_messages",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/messages",
+      "body": {
+        "model": "nodecode-missing-model",
+        "max_tokens": 64,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ]
+      }
+    },
+    "status": 404,
+    "headers": {
+      "x-litellm-call-id": "ba92a842-f3f1-44f2-b5a9-54e6b94f7354",
+      "x-litellm-model-id": "c2395547a7af21fb836224a2a8ca9c7f8bb7896d57d040ea778af7d04f0c61bf",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "type": "error",
+      "error": {
+        "type": "not_found_error",
+        "message": "litellm.NotFoundError: NotFoundError: NodecodeException - {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"The model `nodecode-cyber-v0` does not exist. GET /v1/models lists the ones on your plan.\",\"code\":\"model_not_found\"},\"request_id\":\"01a21610-7d54-7210-b0a9-d7dc0d8aaec1\"}\n\nLiteLLM: model group 'nodecode-missing-model' failed with the error above. No fallback was attempted."
+      }
+    }
+  },
+  {
+    "case": "nodecode-missing-model_chat_stream",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/chat/completions",
+      "body": {
+        "model": "nodecode-missing-model",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 64,
+        "stream": true
+      }
+    },
+    "status": 404,
+    "headers": {
+      "x-litellm-call-id": "158eb1fc-943a-4330-ab59-f7efa5396943",
+      "x-litellm-model-id": "c2395547a7af21fb836224a2a8ca9c7f8bb7896d57d040ea778af7d04f0c61bf",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.NotFoundError: NodecodeException - The model `nodecode-cyber-v0` does not exist. GET /v1/models lists the ones on your plan.\n\nLiteLLM: model group 'nodecode-missing-model' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "404",
+        "provider_specific_fields": {
+          "code": "model_not_found",
+          "request_id": "01a21610-953b-7832-90a3-f2aaefdb0105"
+        }
+      }
+    }
+  }
+]

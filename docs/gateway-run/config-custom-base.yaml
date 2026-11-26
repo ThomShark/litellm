@@ -1,0 +1,8 @@
+model_list:
+  - model_name: cyber-v1
+    litellm_params:
+      model: nodecode/nodecode-cyber-v1
+      api_base: https://api.nodecode.ai/v1
+      api_key: os.environ/NODECODE_API_KEY
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY

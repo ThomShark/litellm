@@ -1,0 +1,47 @@
+# Copy of litellm/proxy/dev_config.yaml with its model_list swapped for the Nodecode
+# deployments this proof needs, and router_settings plus
+# general_settings.coordination_redis pointed at one dedicated Redis.
+model_list:
+  - model_name: nodecode/nodecode-cyber-v1
+    litellm_params:
+      model: nodecode/nodecode-cyber-v1
+      api_key: os.environ/NODECODE_API_KEY
+  # The only way to reach Nodecode before this PR: the generic OpenAI route
+  - model_name: nodecode-openai-workaround
+    litellm_params:
+      model: openai/nodecode-cyber-v1
+      api_base: https://api.nodecode.ai/v1
+      api_key: os.environ/NODECODE_API_KEY
+  # Failure paths
+  - model_name: nodecode-invalid-key
+    litellm_params:
+      model: nodecode/nodecode-cyber-v1
+      api_key: os.environ/NODECODE_INVALID_API_KEY
+  - model_name: nodecode-missing-model
+    litellm_params:
+      model: nodecode/nodecode-cyber-v0
+      api_key: os.environ/NODECODE_API_KEY
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+  coordination_redis:
+    host: 127.0.0.1
+    port: 6390
+
+router_settings:
+  redis_host: 127.0.0.1
+  redis_port: 6390
+
+sandbox_tools:
+  - sandbox_tool_name: e2b_sandbox
+    litellm_params:
+      sandbox_provider: e2b
+      api_key: os.environ/E2B_API_KEY
+
+litellm_settings:
+  drop_params: True
+  code_interpreter_interception_params:
+    enabled: true
+    sandbox_tool_name: e2b_sandbox
+  callbacks:
+    - code_interpreter_interception

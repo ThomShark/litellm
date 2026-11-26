@@ -1,0 +1,11 @@
+chat reasoning_effort=none: HTTP 200, text '323', reasoning 0 chars, usage prompt 18 (cached 0), completion 2 (reasoning 0), cost header 8.580000000000001e-06
+chat reasoning_effort=max: HTTP 200, text '323', reasoning 63 chars, usage prompt 44 (cached 0), completion 21 (reasoning 18), cost header 4.224e-05
+messages default: HTTP 200 blocks ['thinking', 'text'], stop end_turn, text '323', usage input 44 (cached 0), output 21, cost header 4.224e-05
+messages thinking disabled: HTTP 200 blocks ['text'], stop end_turn, text '323', usage input 18 (cached 0), output 2, cost header 8.580000000000001e-06
+messages thinking disabled + reasoning_effort high: HTTP 200 blocks ['text'], stop end_turn, text '323', usage input 18 (cached 0), output 2, cost header 8.580000000000001e-06
+messages reasoning_effort none: HTTP 200 blocks ['thinking', 'text'], stop end_turn, text '323', usage input 44 (cached 0), output 16, cost header 3.5640000000000004e-05
+messages output_config effort low: HTTP 200 blocks ['thinking', 'text'], stop end_turn, text '323', usage input 44 (cached 0), output 16, cost header 3.5640000000000004e-05
+direct messages thinking disabled + reasoning_effort high: HTTP 200 blocks ['text'], stop end_turn, text '323', usage input 18 (cached 0), output 2, cost header absent
+direct messages reasoning_effort none: HTTP 200 blocks ['thinking', 'text'], stop end_turn, text '323', usage input 44 (cached 0), output 19, cost header absent
+direct messages output_config effort low: HTTP 200 blocks ['thinking', 'text'], stop end_turn, text '323', usage input 44 (cached 0), output 21, cost header absent
+saved 10 captures to after/reasoning.json

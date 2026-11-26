@@ -1,0 +1,994 @@
+[
+  {
+    "case": "chat_json",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/chat/completions",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 512
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "3a62ec36-ae79-47b9-b243-5f4e61f31a42",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "3.96e-05"
+    },
+    "body": {
+      "id": "chatcmpl-8e3025deacf82780",
+      "created": 1795666363,
+      "model": "nodecode/nodecode-cyber-v1",
+      "object": "chat.completion",
+      "system_fingerprint": "vllm-0.32.1rc1.dev36+ge68efc685-tp4-866259b6",
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "323",
+            "role": "assistant",
+            "reasoning_content": "We need answer only number. 19*17=323. Need comply.",
+            "provider_specific_fields": {
+              "reasoning": "We need answer only number. 19*17=323. Need comply."
+            }
+          },
+          "provider_specific_fields": {
+            "token_ids": null,
+            "stop_reason": null,
+            "weight_versions": null
+          },
+          "logprobs": null,
+          "stop_reason": null,
+          "token_ids": null
+        }
+      ],
+      "usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 44,
+        "total_tokens": 63,
+        "completion_tokens_details": {
+          "reasoning_tokens": 16
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "created_cache_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "case": "chat_stream",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/chat/completions",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 512,
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      }
+    },
+    "status": 200,
+    "headers": {
+      "x-litellm-call-id": "4bc8f301-32b8-4a1c-ac7d-63ad80f8d5d8",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "content-type": "text/event-stream; charset=utf-8"
+    },
+    "events": [
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-b38ced01f7fe7723",
+          "created": 1795666364,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "content": "",
+                "role": "assistant"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-b38ced01f7fe7723",
+          "created": 1795666364,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "reasoning_content": "We"
+              },
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-b38ced01f7fe7723",
+          "created": 1795666364,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "reasoning_content": " need answer number"
+              },
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-b38ced01f7fe7723",
+          "created": 1795666364,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "reasoning_content": " only. 19*17"
+              },
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-b38ced01f7fe7723",
+          "created": 1795666364,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "reasoning_content": "=323. Need final only"
+              },
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-b38ced01f7fe7723",
+          "created": 1795666364,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "reasoning_content": "."
+              },
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-b38ced01f7fe7723",
+          "created": 1795666364,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "content": "323"
+              },
+              "stop_reason": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-b38ced01f7fe7723",
+          "created": 1795666364,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "system_fingerprint": "vllm-0.32.1rc1.dev36+ge68efc685-tp4-866259b6",
+          "choices": [
+            {
+              "finish_reason": "stop",
+              "index": 0,
+              "delta": {},
+              "stop_reason": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-b38ced01f7fe7723",
+          "created": 1795666364,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "system_fingerprint": "vllm-0.32.1rc1.dev36+ge68efc685-tp4-866259b6",
+          "choices": [],
+          "usage": {
+            "completion_tokens": 21,
+            "prompt_tokens": 44,
+            "total_tokens": 65,
+            "completion_tokens_details": {
+              "reasoning_tokens": 18
+            },
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "created_cache_tokens": 0
+            },
+            "cost": 4.224e-05
+          }
+        }
+      },
+      {
+        "event": null,
+        "data": "[DONE]"
+      }
+    ]
+  },
+  {
+    "case": "responses_json",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/responses",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "input": "What is 19 * 17? Answer with the number only.",
+        "max_output_tokens": 512
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "a00a2dde-b87a-4207-ad61-366a9495321f",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "4.884e-05"
+    },
+    "body": {
+      "id": "resp_zsLOj8geJQ2FEoxqRKpfeCn4J3XzOGd7cZIK4s5O-8EJH0ovb5ss5O-LaTWdiwUrPFp9dCihCi7lKQZYXFpNIY-THWaEXv3dH5SHVy75TzX0e9NQiKeNTGBt8gikrSAsCS7Lp7RzxAH_K3NKYKGi4XXq7ZyIQXOKaRblLVWHNd3hBgpAgh_mFOXd9xe5qeXRrp3IbsCEz4YUnJHrIqm0El4GCWpErJsMSiqQuEE8ji7D8uIWQR96eXLQf7KZFFfL4ks51A-sMtqt4QM4pA2FdbUpv3cSbVYSjTM1yPhRk-H3iSQZ61JGfnrTwhZjyl0ZonVFYtFjajz_RXqA2ndO2nbebI6eVLqyInYeYmqSmmu7zT5EHyexXaRnINSduXLbNI3wvB5elNcssTEDuUQYRqJ2SsTUpAL1qPKj0wPeqcWIj_B2sj6bErriNLqytA==",
+      "created_at": 1795666364,
+      "error": null,
+      "incomplete_details": null,
+      "instructions": null,
+      "metadata": {},
+      "model": "nodecode/nodecode-cyber-v1",
+      "object": "response",
+      "output": [
+        {
+          "id": "rs_01a2160e47cb7c5385e113566417ca41_0",
+          "summary": [],
+          "type": "reasoning",
+          "content": [
+            {
+              "text": "We need answer only number. 19*17=323. Must comply \"number only\". final 323.",
+              "type": "reasoning_text"
+            }
+          ],
+          "encrypted_content": "nc1:We need answer only number. 19*17=323. Must comply \"number only\". final 323."
+        },
+        {
+          "id": "msg_01a2160e47cb7c5385e113566417ca41_1",
+          "content": [
+            {
+              "annotations": [],
+              "text": "323",
+              "type": "output_text",
+              "logprobs": []
+            }
+          ],
+          "role": "assistant",
+          "status": "completed",
+          "type": "message",
+          "phase": null
+        }
+      ],
+      "parallel_tool_calls": true,
+      "temperature": null,
+      "tool_choice": "auto",
+      "tools": [],
+      "top_p": null,
+      "max_output_tokens": 512,
+      "previous_response_id": null,
+      "reasoning": null,
+      "status": "completed",
+      "text": null,
+      "truncation": "disabled",
+      "usage": {
+        "input_tokens": 44,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0,
+          "cached_tokens_details": null,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": null
+        },
+        "output_tokens": 26,
+        "output_tokens_details": {
+          "audio_tokens": null,
+          "reasoning_tokens": 23,
+          "text_tokens": null
+        },
+        "total_tokens": 70,
+        "cost": null
+      },
+      "user": null,
+      "store": false
+    }
+  },
+  {
+    "case": "responses_stream",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/responses",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "input": "What is 19 * 17? Answer with the number only.",
+        "max_output_tokens": 512,
+        "stream": true
+      }
+    },
+    "status": 200,
+    "headers": {
+      "x-litellm-call-id": "3a1bb479-264a-41a5-9548-ca60219a95cb",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "content-type": "text/event-stream; charset=utf-8"
+    },
+    "events": [
+      {
+        "event": "response.created",
+        "data": {
+          "type": "response.created",
+          "response": {
+            "id": "resp_p0Rj76EbMrR_JVSd2e6GobYwKmfJvaWUEtK9zvH-XJGteBTKdw9AxPUGDbKauA_pHw20YX0qMUmASKIi4zbfblaVAoN33idBYcy9bl2eMMqBXEt5Q5sHhthXPlCvFFU5Mw2PqEoP6OUbXS2UA08xghfVKfj3Jpn1XXx_7LUCb6WBiMywMnQ6fngDHC3d1VdI3rjodQT37IzDZpqlFGbufo302HiT9bLXN_zHcqgwryGTvgiX-cFaZy4Q45GyjUApShhdLz51A4adgJh4iTMYhdNr7l0p0ZxIePCtB5ebwLSM5hBiBbafMo6vlHtPLkvsb2UPXvM6IHk5s5Joir1DkAMue9ZdJZJBCVDZlKCzbKv7W4D3VUd7XqPdISrvIHLviEFKNPZ4Det3RBFf8VmipphvjIBlYPjE2WT0ccMSCquN6eM9xsZZxV_RgGW0lA==",
+            "created_at": 1795666364,
+            "metadata": {},
+            "model": "nodecode/nodecode-cyber-v1",
+            "object": "response",
+            "output": [],
+            "parallel_tool_calls": true,
+            "tool_choice": "auto",
+            "tools": [],
+            "max_output_tokens": 512,
+            "status": "in_progress",
+            "truncation": "disabled",
+            "store": false
+          },
+          "sequence_number": 0,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.in_progress",
+        "data": {
+          "type": "response.in_progress",
+          "response": {
+            "id": "resp_p0Rj76EbMrR_JVSd2e6GobYwKmfJvaWUEtK9zvH-XJGteBTKdw9AxPUGDbKauA_pHw20YX0qMUmASKIi4zbfblaVAoN33idBYcy9bl2eMMqBXEt5Q5sHhthXPlCvFFU5Mw2PqEoP6OUbXS2UA08xghfVKfj3Jpn1XXx_7LUCb6WBiMywMnQ6fngDHC3d1VdI3rjodQT37IzDZpqlFGbufo302HiT9bLXN_zHcqgwryGTvgiX-cFaZy4Q45GyjUApShhdLz51A4adgJh4iTMYhdNr7l0p0ZxIePCtB5ebwLSM5hBiBbafMo6vlHtPLkvsb2UPXvM6IHk5s5Joir1DkAMue9ZdJZJBCVDZlKCzbKv7W4D3VUd7XqPdISrvIHLviEFKNPZ4Det3RBFf8VmipphvjIBlYPjE2WT0ccMSCquN6eM9xsZZxV_RgGW0lA==",
+            "created_at": 1795666364,
+            "metadata": {},
+            "model": "nodecode/nodecode-cyber-v1",
+            "object": "response",
+            "output": [],
+            "parallel_tool_calls": true,
+            "tool_choice": "auto",
+            "tools": [],
+            "max_output_tokens": 512,
+            "status": "in_progress",
+            "truncation": "disabled",
+            "store": false
+          },
+          "sequence_number": 1,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.output_item.added",
+        "data": {
+          "type": "response.output_item.added",
+          "output_index": 0,
+          "item": {
+            "type": "reasoning",
+            "id": "rs_01a2160e4a1b7a90aa63668f7cae4406_0",
+            "summary": []
+          },
+          "sequence_number": 2,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.reasoning_text.delta",
+        "data": {
+          "type": "response.reasoning_text.delta",
+          "item_id": "rs_01a2160e4a1b7a90aa63668f7cae4406_0",
+          "output_index": 0,
+          "content_index": 0,
+          "delta": "We",
+          "sequence_number": 3,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.reasoning_text.delta",
+        "data": {
+          "type": "response.reasoning_text.delta",
+          "item_id": "rs_01a2160e4a1b7a90aa63668f7cae4406_0",
+          "output_index": 0,
+          "content_index": 0,
+          "delta": " need answer only number",
+          "sequence_number": 4,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.reasoning_text.delta",
+        "data": {
+          "type": "response.reasoning_text.delta",
+          "item_id": "rs_01a2160e4a1b7a90aa63668f7cae4406_0",
+          "output_index": 0,
+          "content_index": 0,
+          "delta": ". 19*",
+          "sequence_number": 5,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.reasoning_text.delta",
+        "data": {
+          "type": "response.reasoning_text.delta",
+          "item_id": "rs_01a2160e4a1b7a90aa63668f7cae4406_0",
+          "output_index": 0,
+          "content_index": 0,
+          "delta": "17=323. Need final",
+          "sequence_number": 6,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.reasoning_text.delta",
+        "data": {
+          "type": "response.reasoning_text.delta",
+          "item_id": "rs_01a2160e4a1b7a90aa63668f7cae4406_0",
+          "output_index": 0,
+          "content_index": 0,
+          "delta": " only.",
+          "sequence_number": 7,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.reasoning_text.done",
+        "data": {
+          "type": "response.reasoning_text.done",
+          "item_id": "rs_01a2160e4a1b7a90aa63668f7cae4406_0",
+          "output_index": 0,
+          "content_index": 0,
+          "text": "We need answer only number. 19*17=323. Need final only.",
+          "sequence_number": 8,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.output_item.done",
+        "data": {
+          "type": "response.output_item.done",
+          "output_index": 0,
+          "sequence_number": 9,
+          "item": {
+            "type": "reasoning",
+            "id": "rs_01a2160e4a1b7a90aa63668f7cae4406_0",
+            "summary": [],
+            "content": [
+              {
+                "type": "reasoning_text",
+                "text": "We need answer only number. 19*17=323. Need final only."
+              }
+            ],
+            "encrypted_content": "nc1:We need answer only number. 19*17=323. Need final only."
+          },
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.output_item.added",
+        "data": {
+          "type": "response.output_item.added",
+          "output_index": 1,
+          "item": {
+            "type": "message",
+            "id": "msg_01a2160e4a1b7a90aa63668f7cae4406_1",
+            "status": "in_progress",
+            "role": "assistant",
+            "content": []
+          },
+          "sequence_number": 10,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.content_part.added",
+        "data": {
+          "type": "response.content_part.added",
+          "item_id": "msg_01a2160e4a1b7a90aa63668f7cae4406_1",
+          "output_index": 1,
+          "content_index": 0,
+          "part": {
+            "type": "output_text",
+            "text": "",
+            "annotations": [],
+            "logprobs": []
+          },
+          "sequence_number": 11,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.output_text.delta",
+        "data": {
+          "type": "response.output_text.delta",
+          "item_id": "msg_01a2160e4a1b7a90aa63668f7cae4406_1",
+          "output_index": 1,
+          "content_index": 0,
+          "delta": "323",
+          "logprobs": [],
+          "sequence_number": 12,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.output_text.done",
+        "data": {
+          "type": "response.output_text.done",
+          "item_id": "msg_01a2160e4a1b7a90aa63668f7cae4406_1",
+          "output_index": 1,
+          "content_index": 0,
+          "text": "323",
+          "logprobs": [],
+          "sequence_number": 13,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.content_part.done",
+        "data": {
+          "type": "response.content_part.done",
+          "item_id": "msg_01a2160e4a1b7a90aa63668f7cae4406_1",
+          "output_index": 1,
+          "content_index": 0,
+          "part": {
+            "type": "output_text",
+            "text": "323",
+            "annotations": [],
+            "logprobs": []
+          },
+          "sequence_number": 14,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.output_item.done",
+        "data": {
+          "type": "response.output_item.done",
+          "output_index": 1,
+          "sequence_number": 15,
+          "item": {
+            "type": "message",
+            "id": "msg_01a2160e4a1b7a90aa63668f7cae4406_1",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "323",
+                "annotations": [],
+                "logprobs": []
+              }
+            ]
+          },
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.completed",
+        "data": {
+          "type": "response.completed",
+          "response": {
+            "id": "resp_p0Rj76EbMrR_JVSd2e6GobYwKmfJvaWUEtK9zvH-XJGteBTKdw9AxPUGDbKauA_pHw20YX0qMUmASKIi4zbfblaVAoN33idBYcy9bl2eMMqBXEt5Q5sHhthXPlCvFFU5Mw2PqEoP6OUbXS2UA08xghfVKfj3Jpn1XXx_7LUCb6WBiMywMnQ6fngDHC3d1VdI3rjodQT37IzDZpqlFGbufo302HiT9bLXN_zHcqgwryGTvgiX-cFaZy4Q45GyjUApShhdLz51A4adgJh4iTMYhdNr7l0p0ZxIePCtB5ebwLSM5hBiBbafMo6vlHtPLkvsb2UPXvM6IHk5s5Joir1DkAMue9ZdJZJBCVDZlKCzbKv7W4D3VUd7XqPdISrvIHLviEFKNPZ4Det3RBFf8VmipphvjIBlYPjE2WT0ccMSCquN6eM9xsZZxV_RgGW0lA==",
+            "created_at": 1795666364,
+            "metadata": {},
+            "model": "nodecode/nodecode-cyber-v1",
+            "object": "response",
+            "output": [
+              {
+                "id": "rs_01a2160e4a1b7a90aa63668f7cae4406_0",
+                "summary": [],
+                "type": "reasoning",
+                "content": [
+                  {
+                    "text": "We need answer only number. 19*17=323. Need final only.",
+                    "type": "reasoning_text"
+                  }
+                ],
+                "encrypted_content": "nc1:We need answer only number. 19*17=323. Need final only."
+              },
+              {
+                "id": "msg_01a2160e4a1b7a90aa63668f7cae4406_1",
+                "content": [
+                  {
+                    "annotations": [],
+                    "text": "323",
+                    "type": "output_text",
+                    "logprobs": []
+                  }
+                ],
+                "role": "assistant",
+                "status": "completed",
+                "type": "message"
+              }
+            ],
+            "parallel_tool_calls": true,
+            "tool_choice": "auto",
+            "tools": [],
+            "max_output_tokens": 512,
+            "status": "completed",
+            "truncation": "disabled",
+            "usage": {
+              "input_tokens": 44,
+              "input_tokens_details": {
+                "cached_tokens": 0
+              },
+              "output_tokens": 21,
+              "output_tokens_details": {
+                "reasoning_tokens": 18
+              },
+              "total_tokens": 65,
+              "cost": 4.224e-05
+            },
+            "store": false
+          },
+          "sequence_number": 16,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      }
+    ]
+  },
+  {
+    "case": "messages_json",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "max_tokens": 512,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ]
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "99114023-9cc8-4417-89ad-9ed9c3ebcf9d",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "3.5640000000000004e-05"
+    },
+    "body": {
+      "id": "msg_01a2160e4c53796283d59441802782fd",
+      "type": "message",
+      "role": "assistant",
+      "model": "nodecode/nodecode-cyber-v1",
+      "content": [
+        {
+          "type": "thinking",
+          "thinking": "We need answer only number. 19*17=323.",
+          "signature": ""
+        },
+        {
+          "type": "text",
+          "text": "323"
+        }
+      ],
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "usage": {
+        "input_tokens": 44,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 16
+      }
+    }
+  },
+  {
+    "case": "messages_stream",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "max_tokens": 512,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "stream": true
+      }
+    },
+    "status": 200,
+    "headers": {
+      "x-litellm-call-id": "00505e51-285e-46de-aedb-705221e3a305",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "content-type": "text/event-stream; charset=utf-8"
+    },
+    "events": [
+      {
+        "event": "message_start",
+        "data": {
+          "type": "message_start",
+          "message": {
+            "id": "msg_01a2160e4d8a7ea392adde68cbff9a7a",
+            "type": "message",
+            "role": "assistant",
+            "model": "nodecode/nodecode-cyber-v1",
+            "content": [],
+            "stop_reason": null,
+            "stop_sequence": null,
+            "usage": {
+              "input_tokens": 0,
+              "output_tokens": 0
+            }
+          }
+        }
+      },
+      {
+        "event": "ping",
+        "data": {
+          "type": "ping"
+        }
+      },
+      {
+        "event": "content_block_start",
+        "data": {
+          "type": "content_block_start",
+          "index": 0,
+          "content_block": {
+            "type": "thinking",
+            "thinking": "",
+            "signature": ""
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "thinking_delta",
+            "thinking": "We"
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "thinking_delta",
+            "thinking": " need answer only"
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "thinking_delta",
+            "thinking": " number. 19"
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "thinking_delta",
+            "thinking": "*17=323. Need"
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "thinking_delta",
+            "thinking": " number"
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "thinking_delta",
+            "thinking": " only."
+          }
+        }
+      },
+      {
+        "event": "content_block_stop",
+        "data": {
+          "type": "content_block_stop",
+          "index": 0
+        }
+      },
+      {
+        "event": "content_block_start",
+        "data": {
+          "type": "content_block_start",
+          "index": 1,
+          "content_block": {
+            "type": "text",
+            "text": ""
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "text_delta",
+            "text": "323"
+          }
+        }
+      },
+      {
+        "event": "content_block_stop",
+        "data": {
+          "type": "content_block_stop",
+          "index": 1
+        }
+      },
+      {
+        "event": "message_delta",
+        "data": {
+          "type": "message_delta",
+          "delta": {
+            "stop_reason": "end_turn",
+            "stop_sequence": null
+          },
+          "usage": {
+            "input_tokens": 44,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "output_tokens": 21
+          }
+        }
+      },
+      {
+        "event": "message_stop",
+        "data": {
+          "type": "message_stop"
+        }
+      }
+    ]
+  },
+  {
+    "case": "workaround_chat_json",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/chat/completions",
+      "body": {
+        "model": "nodecode-openai-workaround",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 512
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "66951959-f830-4b68-a496-2b65bbd9fb17",
+      "x-litellm-model-id": "897527e7f0279fb8df55c48aa26fe828eec56808163481f92c75d2c5c79aaf98"
+    },
+    "body": {
+      "id": "chatcmpl-88cd95a2b0698b8d",
+      "created": 1795666366,
+      "model": "nodecode-openai-workaround",
+      "object": "chat.completion",
+      "system_fingerprint": "vllm-0.32.1rc1.dev36+ge68efc685-tp4-866259b6",
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "323",
+            "role": "assistant",
+            "reasoning_content": "We need answer only number. 19*17=323. Need final only.",
+            "provider_specific_fields": {
+              "reasoning": "We need answer only number. 19*17=323. Need final only."
+            }
+          },
+          "provider_specific_fields": {
+            "token_ids": null,
+            "stop_reason": null,
+            "weight_versions": null
+          },
+          "logprobs": null,
+          "stop_reason": null,
+          "token_ids": null
+        }
+      ],
+      "usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 44,
+        "total_tokens": 65,
+        "completion_tokens_details": {
+          "reasoning_tokens": 18
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "created_cache_tokens": 0
+        }
+      }
+    }
+  }
+]

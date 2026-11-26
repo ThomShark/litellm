@@ -1,0 +1,40 @@
+request_id | call_type | model_group | provider | prompt_tokens | completion_tokens | spend | status
+3d8b00cc-b4ad-4ef8-a56c-5f0e | acompletion | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+68c4ca33-5956-4d85-a4e8-ae52 | acompletion | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+59c26a2d-8e32-4464-925b-a1d4 | aresponses | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+4ab66329-17d7-4b50-b214-60f9 | aresponses | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+3499439b-322f-49a6-91f3-3678 | anthropic_messages | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+72ead9dd-8109-4c16-98a1-5910 | anthropic_messages | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+chatcmpl-877c8bbd75dd80a8 | acompletion | nodecode-openai-workaround | openai | 44 | 20 | 0 | success
+ce1473d2-389c-4445-b6dd-a14c | acompletion | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+78a7f597-93a1-4bed-80c6-a5d1 | acompletion | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+f3c9d69f-5b7d-4317-8dae-e5fc | aresponses | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+e37f4acd-78f8-430e-ab61-f2f4 | aresponses | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+3b7f555c-4be0-4408-abb1-6ea4 | anthropic_messages | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+c057a472-05eb-4a9e-a8d7-a6a8 | anthropic_messages | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+07d68d53-8a24-44b9-a836-91aa | acompletion | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+ca8b1ae5-21a0-483c-9f19-208b | acompletion | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+b74e1a28-c063-4bfe-ac00-7032 | anthropic_messages | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+67dae249-6162-401f-9187-697f | anthropic_messages | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+38e086d1-e1d8-45f4-9200-2980 | anthropic_messages | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+a77145f2-cc10-4a84-9d69-00b8 | acompletion | nodecode-invalid-key |  | 0 | 0 | 0 | failure
+9ee92ab6-5220-49e3-a185-e993 | aresponses | nodecode-invalid-key |  | 0 | 0 | 0 | failure
+e1282713-e576-46d3-ac3a-d82b | anthropic_messages | nodecode-invalid-key |  | 0 | 0 | 0 | failure
+eeb7d616-a656-4fcf-b691-d3c3 | acompletion | nodecode-invalid-key |  | 0 | 0 | 0 | failure
+daabf7d0-034f-4e87-b8b7-0196 | acompletion | nodecode-missing-model |  | 0 | 0 | 0 | failure
+f40f103b-d3af-46aa-b307-82e4 | aresponses | nodecode-missing-model |  | 0 | 0 | 0 | failure
+bf24b5b5-da63-4deb-b8e6-558d | anthropic_messages | nodecode-missing-model |  | 0 | 0 | 0 | failure
+8cdab7ec-46ec-4dcb-9984-1457 | acompletion | nodecode-missing-model |  | 0 | 0 | 0 | failure
+1e4970f8-d723-4dbb-9641-7e1d | acompletion | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+0a0c291a-e83b-49f0-8ba9-b2ee | acompletion | nodecode-invalid-key |  | 0 | 0 | 0 | failure
+5ece21fb-820f-4c02-9ab9-c55a | aresponses | nodecode-invalid-key |  | 0 | 0 | 0 | failure
+197cdd91-6bc4-4c0b-92ee-fffd | anthropic_messages | nodecode-invalid-key |  | 0 | 0 | 0 | failure
+7f83f275-7db0-4250-b01a-e9eb | acompletion | nodecode-invalid-key |  | 0 | 0 | 0 | failure
+c129cae1-8618-484d-89bd-5891 | acompletion | nodecode-missing-model |  | 0 | 0 | 0 | failure
+b2146b07-4a39-4c20-88b5-eeb6 | aresponses | nodecode-missing-model |  | 0 | 0 | 0 | failure
+cfe3925a-18b6-4c58-b478-4cae | anthropic_messages | nodecode-missing-model |  | 0 | 0 | 0 | failure
+e3c06eef-8a6b-4dc1-9aca-bac7 | acompletion | nodecode-missing-model |  | 0 | 0 | 0 | failure
+8c4da481-60bc-4874-8796-4e6e | acompletion | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+193a6323-4e82-4ca5-a2ff-aed8 | aresponses | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+20a5b8ee-b81a-42f7-a11e-8f18 | anthropic_messages | nodecode/nodecode-cyber-v1 |  | 0 | 0 | 0 | failure
+(38 rows)

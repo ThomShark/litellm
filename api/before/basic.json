@@ -1,0 +1,246 @@
+[
+  {
+    "case": "chat_json",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/chat/completions",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 512
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "3d8b00cc-b4ad-4ef8-a56c-5f0eb46187ca",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400"
+      }
+    }
+  },
+  {
+    "case": "chat_stream",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/chat/completions",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 512,
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        }
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "68c4ca33-5956-4d85-a4e8-ae52564ec541",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400"
+      }
+    }
+  },
+  {
+    "case": "responses_json",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/responses",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "input": "What is 19 * 17? Answer with the number only.",
+        "max_output_tokens": 512
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "59c26a2d-8e32-4464-925b-a1d47e863e99",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400"
+      }
+    }
+  },
+  {
+    "case": "responses_stream",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/responses",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "input": "What is 19 * 17? Answer with the number only.",
+        "max_output_tokens": 512,
+        "stream": true
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "4ab66329-17d7-4b50-b214-60f9a89b9cfd",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400"
+      }
+    }
+  },
+  {
+    "case": "messages_json",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "max_tokens": 512,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ]
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "3499439b-322f-49a6-91f3-3678177c4073",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "type": "error",
+      "error": {
+        "type": "invalid_request_error",
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted."
+      }
+    }
+  },
+  {
+    "case": "messages_stream",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "max_tokens": 512,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "stream": true
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "72ead9dd-8109-4c16-98a1-5910d2af8ded",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "type": "error",
+      "error": {
+        "type": "invalid_request_error",
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted."
+      }
+    }
+  },
+  {
+    "case": "workaround_chat_json",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/chat/completions",
+      "body": {
+        "model": "nodecode-openai-workaround",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 512
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "c148c266-a4c9-4e33-8193-ffd1a4f8a4b2",
+      "x-litellm-model-id": "897527e7f0279fb8df55c48aa26fe828eec56808163481f92c75d2c5c79aaf98"
+    },
+    "body": {
+      "id": "chatcmpl-877c8bbd75dd80a8",
+      "created": 1795666351,
+      "model": "nodecode-openai-workaround",
+      "object": "chat.completion",
+      "system_fingerprint": "vllm-0.32.1rc1.dev36+ge68efc685-tp4-866259b6",
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "323",
+            "role": "assistant",
+            "reasoning_content": "We need answer only number. 19*17=323. Must only number.",
+            "provider_specific_fields": {
+              "reasoning": "We need answer only number. 19*17=323. Must only number."
+            }
+          },
+          "provider_specific_fields": {
+            "token_ids": null,
+            "stop_reason": null,
+            "weight_versions": null
+          },
+          "logprobs": null,
+          "stop_reason": null,
+          "token_ids": null
+        }
+      ],
+      "usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 44,
+        "total_tokens": 64,
+        "completion_tokens_details": {
+          "reasoning_tokens": 17
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "created_cache_tokens": 0
+        }
+      }
+    }
+  }
+]

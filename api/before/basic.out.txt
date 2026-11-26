@@ -1,0 +1,8 @@
+chat json: HTTP 400 "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was att"
+chat stream: HTTP 400 "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was att"
+responses json: HTTP 400 "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was att"
+responses stream: HTTP 400 "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was att"
+messages json: HTTP 400 "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was att"
+messages stream: HTTP 400 "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was att"
+openai/ workaround chat json: HTTP 200, text '323', reasoning 56 chars, usage prompt 44 (cached 0), completion 20 (reasoning 17), cost header absent
+saved 7 captures to before/basic.json

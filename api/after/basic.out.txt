@@ -1,0 +1,8 @@
+chat json: HTTP 200, text '323', reasoning 51 chars, usage prompt 44 (cached 0), completion 19 (reasoning 16), cost header 3.96e-05
+chat stream: HTTP 200 stream, 10 events, text '323', usage prompt 44 (cached 0), completion 21 (reasoning 18), [DONE] True, cost header absent
+responses json: HTTP 200 status completed, output ['reasoning', 'message'], text '323', usage input 44 (cached 0), output 26, cost header 4.884e-05
+responses stream: HTTP 200 stream, 17 events, status completed, output ['reasoning', 'message'], text '323', usage input 44 (cached 0), output 21, cost header absent
+messages json: HTTP 200 blocks ['thinking', 'text'], stop end_turn, text '323', usage input 44 (cached 0), output 16, cost header 3.5640000000000004e-05
+messages stream: HTTP 200 stream, 15 events, 1 message_stop, blocks ['thinking', 'text'], stop end_turn, text '323', usage input 44 (cached 0), output 21, cost header absent
+openai/ workaround chat json: HTTP 200, text '323', reasoning 55 chars, usage prompt 44 (cached 0), completion 21 (reasoning 18), cost header absent
+saved 7 captures to after/basic.json

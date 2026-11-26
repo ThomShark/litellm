@@ -1,0 +1,52 @@
+HTTP/1.1 200 OK
+date: Thu, 26 Nov 2026 04:14:08 GMT
+content-length: 2561
+content-type: application/json
+x-litellm-call-id: dc018984-7961-45ba-bc4a-bb26656c5d86
+x-litellm-model-id: 1f38c0a3e1ad932d86015ba16775e5a1e2d7a24f64d1e5a9e917a88c7c07e056
+x-litellm-model-name: nodecode/nodecode-cyber-v1
+x-litellm-model-api-base: https://api.nodecode.ai/v1
+x-litellm-version: 1.113.0
+x-litellm-response-cost: 0.00024915
+x-litellm-response-cost-original: 0.00024915
+x-litellm-response-cost-discount-amount: 0.0
+x-litellm-response-cost-margin-amount: 0.0
+x-litellm-response-cost-margin-percent: 0.0
+x-litellm-response-cost-input: 1.1550000000000001e-05
+x-litellm-response-cost-output: 0.0002376
+x-litellm-response-cost-reasoning: 7.788e-05
+x-litellm-response-cost-tool-usage: 0.0
+x-litellm-key-spend: 0.00024915
+x-litellm-response-duration-ms: 3521.684169769287
+x-litellm-overhead-duration-ms: 40.5922
+x-litellm-callback-duration-ms: 0.0
+llm_provider-date: Thu, 26 Nov 2026 04:14:11 GMT
+llm_provider-content-type: application/json
+llm_provider-transfer-encoding: chunked
+llm_provider-connection: keep-alive
+llm_provider-server: BunnyCDN-AMS1-883
+llm_provider-cdn-pullzone: 6869918
+llm_provider-cdn-requestcountrycode: NL
+llm_provider-access-control-allow-origin: *
+llm_provider-cache-control: no-store
+llm_provider-content-encoding: br
+llm_provider-via: 1.1 Caddy
+llm_provider-strict-transport-security: max-age=31536000
+llm_provider-x-request-id: 01a2160f-9076-7ca3-b213-1d7135188c14
+llm_provider-cdn-proxyver: 1.74
+llm_provider-cdn-requestpullsuccess: True
+llm_provider-cdn-requestpullcode: 200
+llm_provider-cdn-cachedat: 11/26/2026 04:14:11
+llm_provider-cdn-edgestorageid: 883
+llm_provider-cdn-requestid: 038ab05b2fdcc546b3f106c1c6ef98c0
+llm_provider-cdn-requesttime: 0
+llm_provider-request-id: 01a2160f-9076-7ca3-b213-1d7135188c14
+request-id: 01a2160f-9076-7ca3-b213-1d7135188c14
+x-litellm-model-group: cyber-v1
+x-litellm-attempted-retries: 0
+x-litellm-attempted-fallbacks: 0
+x-frame-options: DENY
+content-security-policy: frame-ancestors 'none'
+x-content-type-options: nosniff
+
+{"id":"resp_80FKkV4n8-TbhPlFSWx-oasc7dQ68CSp_0vfGo1ObPz9M6CxBaonvK4q-pHg4KjI_hifFNUP4rCPBYm1sBK6L165MSmNKJfXOTnHNnfaBzSAmv7RsWg41_R58pJWOjx_wr5StCrcNxpsPE3QA3jcccVNztSvI1WTJF72ffCZLUBctu_qVoIRxhGkKY02d6mZzcfYfOEHLJBviHo2RpYL3a-235SeaDdWWlLGBhzbn6CVCmT-C6HOA1k_xMAbDZ42e5knXSua3gNg2D5NNrAWuyUlSVL1Jljf6nVGTL2pSsCQPAYTsf_ycOqioYn44L_xOUFVbuJUO_3iCuJiiChB5-92GVTRK8HYR13JL_U5jjxX-Ty0wfMZHwMhkL2kYJWs8MvHvvF_7RLc684sv-b11TImQSmbjVb-HmvqOzELbi8G5sonuzhYRKMCGH0bTg==","created_at":1795666448,"error":null,"incomplete_details":null,"instructions":null,"metadata":{},"model":"cyber-v1","object":"response","output":[{"id":"rs_01a2160f90767ca3b2131d7135188c14_0","summary":[],"type":"reasoning","content":[{"text":"The user says \"hello from litellm\". This is a## go\n\nA simple greeting. I should respond warmly and perhaps mention I know about LiteLLM (a library that provides a unified interface to call many LLM providers). Keep it brief and friendly, invite what they need.","type":"reasoning_text"}],"encrypted_content":"nc1:The user says \"hello from litellm\". This is a## go\n\nA simple greeting. I should respond warmly and perhaps mention I know about LiteLLM (a library that provides a unified interface to call many LLM providers). Keep it brief and friendly, invite what they need."},{"id":"msg_01a2160f90767ca3b2131d7135188c14_1","content":[{"annotations":[],"text":"Hello! 👋 Welcome — happy to see you're coming from LiteLLM.\n\nLiteLLM's a great choice for routing across providers with a single OpenAI-style interface. What can I help you with today? A few things I'm often useful for:\n\n- Debugging LiteLLM configs (model lists, router settings, fallbacks)\n- Comparing provider behavior or cost/latency tradeoffs\n- Writing code that calls through LiteLLM (Python, proxies, or the OpenAI SDK)\n- Prompt/agent design once the plumbing is sorted\n\nWhat are you working on?","type":"output_text","logprobs":[]}],"role":"assistant","status":"completed","type":"message","phase":null}],"parallel_tool_calls":true,"temperature":null,"tool_choice":"auto","tools":[],"top_p":null,"max_output_tokens":null,"previous_response_id":null,"reasoning":null,"status":"completed","text":null,"truncation":"disabled","usage":{"input_tokens":35,"input_tokens_details":{"audio_tokens":null,"cached_tokens":0,"cached_tokens_details":null,"image_tokens":null,"text_tokens":null,"video_tokens":null},"output_tokens":180,"output_tokens_details":{"audio_tokens":null,"reasoning_tokens":59,"text_tokens":null},"total_tokens":215,"cost":null},"user":null,"store":false}

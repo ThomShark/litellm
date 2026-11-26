@@ -1,0 +1,6 @@
+model_group | provider | status | calls | spend
+nodecode-invalid-key | (none) | failure | 8 | 0
+nodecode-missing-model | (none) | failure | 8 | 0
+nodecode/nodecode-cyber-v1 | (none) | failure | 21 | 0
+nodecode-openai-workaround | openai | success | 1 | 0
+(4 rows)

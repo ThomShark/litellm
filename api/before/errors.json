@@ -1,0 +1,240 @@
+[
+  {
+    "case": "nodecode-invalid-key_chat",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/chat/completions",
+      "body": {
+        "model": "nodecode-invalid-key",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 64
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "0a0c291a-e83b-49f0-8ba9-b2ee2dbedec9",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: You passed in model=nodecode-invalid-key. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode-invalid-key' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400"
+      }
+    }
+  },
+  {
+    "case": "nodecode-invalid-key_responses",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/responses",
+      "body": {
+        "model": "nodecode-invalid-key",
+        "input": "What is 19 * 17? Answer with the number only.",
+        "max_output_tokens": 64
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "5ece21fb-820f-4c02-9ab9-c55a948b00b1",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: You passed in model=nodecode-invalid-key. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode-invalid-key' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400"
+      }
+    }
+  },
+  {
+    "case": "nodecode-invalid-key_messages",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/messages",
+      "body": {
+        "model": "nodecode-invalid-key",
+        "max_tokens": 64,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ]
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "197cdd91-6bc4-4c0b-92ee-fffdea13c25c",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "type": "error",
+      "error": {
+        "type": "invalid_request_error",
+        "message": "litellm.BadRequestError: You passed in model=nodecode-invalid-key. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode-invalid-key' failed with the error above. No fallback was attempted."
+      }
+    }
+  },
+  {
+    "case": "nodecode-invalid-key_chat_stream",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/chat/completions",
+      "body": {
+        "model": "nodecode-invalid-key",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 64,
+        "stream": true
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "7f83f275-7db0-4250-b01a-e9eb48935e4a",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: You passed in model=nodecode-invalid-key. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode-invalid-key' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400"
+      }
+    }
+  },
+  {
+    "case": "nodecode-missing-model_chat",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/chat/completions",
+      "body": {
+        "model": "nodecode-missing-model",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 64
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "c129cae1-8618-484d-89bd-58918faaadde",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: You passed in model=nodecode-missing-model. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode-missing-model' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400"
+      }
+    }
+  },
+  {
+    "case": "nodecode-missing-model_responses",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/responses",
+      "body": {
+        "model": "nodecode-missing-model",
+        "input": "What is 19 * 17? Answer with the number only.",
+        "max_output_tokens": 64
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "b2146b07-4a39-4c20-88b5-eeb601c9b545",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: You passed in model=nodecode-missing-model. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode-missing-model' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400"
+      }
+    }
+  },
+  {
+    "case": "nodecode-missing-model_messages",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/messages",
+      "body": {
+        "model": "nodecode-missing-model",
+        "max_tokens": 64,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ]
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "cfe3925a-18b6-4c58-b478-4cae962f16ab",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "type": "error",
+      "error": {
+        "type": "invalid_request_error",
+        "message": "litellm.BadRequestError: You passed in model=nodecode-missing-model. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode-missing-model' failed with the error above. No fallback was attempted."
+      }
+    }
+  },
+  {
+    "case": "nodecode-missing-model_chat_stream",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/chat/completions",
+      "body": {
+        "model": "nodecode-missing-model",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 64,
+        "stream": true
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "e3c06eef-8a6b-4dc1-9aca-bac763e8ae3e",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: You passed in model=nodecode-missing-model. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode-missing-model' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400"
+      }
+    }
+  }
+]

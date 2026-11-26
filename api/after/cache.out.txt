@@ -1,0 +1,19 @@
+cache chat proxy turn 1: answer 'ready', prompt 2925 (cached 0), output 2, cost at the cost-map rates 0.000967890, cost header 0.0009678900000000001
+cache chat proxy turn 2: answer '323', prompt 2944 (cached 2816), output 2, cost at the cost-map rates 0.000070224, cost header 7.022400000000001e-05
+cache chat proxy turn 3: answer '324', prompt 2963 (cached 2816), output 2, cost at the cost-map rates 0.000076494, cost header 7.6494e-05
+cache chat direct turn 1: answer 'ready', prompt 2927 (cached 0), output 2, cost at the cost-map rates 0.000968550, cost header absent
+cache chat direct turn 2: answer '323', prompt 2946 (cached 2816), output 2, cost at the cost-map rates 0.000070884, cost header absent
+cache chat direct turn 3: answer '324', prompt 2965 (cached 2912), output 2, cost at the cost-map rates 0.000046338, cost header absent
+cache responses proxy turn 1: answer 'ready', prompt 2928 (cached 0), output 2, cost at the cost-map rates 0.000968880, cost header 0.0009688800000000001
+cache responses proxy turn 2: answer '323', prompt 2947 (cached 2816), output 2, cost at the cost-map rates 0.000071214, cost header 7.121400000000001e-05
+cache responses proxy turn 3: answer '324', prompt 2966 (cached 2912), output 2, cost at the cost-map rates 0.000046668, cost header 4.6668e-05
+cache responses direct turn 1: answer 'ready', prompt 2924 (cached 0), output 2, cost at the cost-map rates 0.000967560, cost header absent
+cache responses direct turn 2: answer '323', prompt 2943 (cached 2816), output 2, cost at the cost-map rates 0.000069894, cost header absent
+cache responses direct turn 3: answer '324', prompt 2962 (cached 2816), output 2, cost at the cost-map rates 0.000076164, cost header absent
+cache messages proxy turn 1: answer 'ready', prompt 2924 (cached 0), output 2, cost at the cost-map rates 0.000967560, cost header 0.0009675600000000001
+cache messages proxy turn 2: answer '323', prompt 2943 (cached 2816), output 2, cost at the cost-map rates 0.000069894, cost header 6.9894e-05
+cache messages proxy turn 3: answer '324', prompt 2962 (cached 2816), output 2, cost at the cost-map rates 0.000076164, cost header 7.6164e-05
+cache messages direct turn 1: answer 'ready', prompt 2926 (cached 0), output 2, cost at the cost-map rates 0.000968220, cost header absent
+cache messages direct turn 2: answer '323', prompt 2945 (cached 2816), output 2, cost at the cost-map rates 0.000070554, cost header absent
+cache messages direct turn 3: answer '324', prompt 2964 (cached 2912), output 2, cost at the cost-map rates 0.000046008, cost header absent
+saved 18 captures to after/cache.json

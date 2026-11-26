@@ -1,0 +1,53 @@
+Start with **service/version enumeration and the web app on 8080** — that’s usually where the initial foothold is.
+
+### 1. Confirm versions and default scripts
+```bash
+nmap -sV -sC -p22,8080 -Pn <target>
+nmap -p- --min-rate 1000 -Pn <target>   # optional: make sure no other ports missed
+```
+
+### 2. Enumerate SSH
+```bash
+nc -nv <target> 22
+ssh -v <target>
+```
+Look for:
+- OpenSSH version / OS hints
+- allowed auth methods (`publickey`, `password`)
+- usernames leaked from the web app
+- old-version CVEs, but usually you need creds/keys first
+
+### 3. Enumerate HTTP on 8080
+```bash
+curl -i http://<target>:8080/
+curl -k -i https://<target>:8080/   # if TLS
+whatweb http://<target>:8080/
+nikto -h http://<target>:8080/
+```
+
+Check common paths:
+```bash
+ffuf -u http://<target>:8080/FUZZ -w /usr/share/wordlists/dirb/common.txt -mc 200,204,301,302,307,401,403
+```
+Also manually try/identify:
+- `/manager/html`, `/host-manager/html` → Tomcat
+- `/jenkins`, `/script` → Jenkins
+- `/actuator`, `/actuator/env`, `/actuator/heapdump` → Spring Boot
+- `/admin`, `/login`, `/api`, `/swagger-ui`, `/v2/api-docs`
+- `/robots.txt`, `/sitemap.xml`, `/.git/`, `/backup`, `/uploads`
+
+### 4. Inspect the app
+- View source, JS files, cookies, headers
+- Look for usernames, API endpoints, version numbers, debug pages
+- Try default creds only if authorized
+- If it’s Tomcat/Jenkins/Spring, check known exploit paths and credential leaks
+
+### 5. Pivot back to SSH
+Once you find:
+- usernames → try SSH auth methods
+- passwords/keys → SSH in
+- web app RCE → use it to read `~/.ssh`, env vars, config files, or add a key
+
+**Priority order:** `8080 web enumeration` → `identify app/framework` → `find creds/vuln` → `SSH with discovered creds`.
+
+If you paste the `nmap -sV -sC` output and the `curl -i http://<target>:8080/` response, I can narrow the next step.

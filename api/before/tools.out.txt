@@ -1,0 +1,7 @@
+chat tool json: HTTP 400 "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was att"
+chat tool stream: HTTP 400 "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was att"
+responses tool json: HTTP 400 "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was att"
+responses tool stream: HTTP 400 "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was att"
+messages tool json: HTTP 400 "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was att"
+messages tool stream: HTTP 400 "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was att"
+saved 6 captures to before/tools.json

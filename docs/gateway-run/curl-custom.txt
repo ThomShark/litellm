@@ -1,0 +1,51 @@
+HTTP/1.1 200 OK
+date: Thu, 26 Nov 2026 04:14:21 GMT
+content-length: 569
+content-type: application/json
+x-litellm-call-id: 501d2221-cb14-4b81-ac6b-137cd913efdd
+x-litellm-model-id: fe96ada084c5ad39c36d5d6957e68a5c27a337b721e718c9446dd1c23f07859e
+x-litellm-model-name: nodecode/nodecode-cyber-v1
+x-litellm-model-api-base: https://api.nodecode.ai/v1
+x-litellm-version: 1.113.0
+x-litellm-response-cost: 4.95e-06
+x-litellm-response-cost-original: 4.95e-06
+x-litellm-response-cost-discount-amount: 0.0
+x-litellm-response-cost-margin-amount: 0.0
+x-litellm-response-cost-margin-percent: 0.0
+x-litellm-response-cost-input: 2.31e-06
+x-litellm-response-cost-output: 2.64e-06
+x-litellm-response-cost-tool-usage: 0.0
+x-litellm-key-spend: 4.95e-06
+x-litellm-response-duration-ms: 259.22298431396484
+x-litellm-overhead-duration-ms: 84.6601
+x-litellm-callback-duration-ms: 0.0
+llm_provider-date: Thu, 26 Nov 2026 04:14:22 GMT
+llm_provider-content-type: application/json
+llm_provider-transfer-encoding: chunked
+llm_provider-connection: keep-alive
+llm_provider-server: BunnyCDN-AMS1-1056
+llm_provider-cdn-pullzone: 6869918
+llm_provider-cdn-requestcountrycode: NL
+llm_provider-access-control-allow-origin: *
+llm_provider-cache-control: no-store
+llm_provider-content-encoding: br
+llm_provider-via: 1.1 Caddy
+llm_provider-strict-transport-security: max-age=31536000
+llm_provider-x-request-id: 01a2160f-c649-7183-8406-63a6bf28e588
+llm_provider-cdn-proxyver: 1.74
+llm_provider-cdn-requestpullsuccess: True
+llm_provider-cdn-requestpullcode: 200
+llm_provider-cdn-cachedat: 11/26/2026 04:14:22
+llm_provider-cdn-edgestorageid: 1056
+llm_provider-cdn-requestid: afbb045352761bf18cb3a60cba3170d8
+llm_provider-cdn-requesttime: 0
+llm_provider-request-id: 01a2160f-c649-7183-8406-63a6bf28e588
+request-id: 01a2160f-c649-7183-8406-63a6bf28e588
+x-litellm-model-group: cyber-v1
+x-litellm-attempted-retries: 0
+x-litellm-attempted-fallbacks: 0
+x-frame-options: DENY
+content-security-policy: frame-ancestors 'none'
+x-content-type-options: nosniff
+
+{"id":"chatcmpl-89f4fcc580d58599","created":1795666462,"model":"cyber-v1","object":"chat.completion","system_fingerprint":"vllm-0.33.0-tp2-0b7dbd1e","choices":[{"finish_reason":"stop","index":0,"message":{"content":"OK","role":"assistant"},"provider_specific_fields":{"weight_versions":null,"stop_reason":null,"token_ids":null},"logprobs":null,"stop_reason":null,"token_ids":null}],"usage":{"completion_tokens":2,"prompt_tokens":7,"total_tokens":9,"completion_tokens_details":{"reasoning_tokens":0},"prompt_tokens_details":{"cached_tokens":0,"created_cache_tokens":0}}}

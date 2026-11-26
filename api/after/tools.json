@@ -1,0 +1,2251 @@
+[
+  {
+    "case": "chat_tool_json_1",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/chat/completions",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "multiply",
+              "description": "Multiply two integers",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "a": {
+                    "type": "integer"
+                  },
+                  "b": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "a",
+                  "b"
+                ]
+              }
+            }
+          }
+        ],
+        "max_completion_tokens": 1024,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+          }
+        ]
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "2db6ec9a-69bc-4925-ad96-070f3e9a417d",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "0.00020427"
+    },
+    "body": {
+      "id": "chatcmpl-b793394030b2fd99",
+      "created": 1795666366,
+      "model": "nodecode/nodecode-cyber-v1",
+      "object": "chat.completion",
+      "system_fingerprint": "vllm-0.32.1rc1.dev36+ge68efc685-tp4-866259b6",
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "tool_calls": [
+              {
+                "function": {
+                  "arguments": "{\"a\": 19, \"b\": 17}",
+                  "name": "multiply"
+                },
+                "id": "chatcmpl-tool-8884c840363f063b",
+                "type": "function"
+              }
+            ],
+            "reasoning_content": "The user wants me to multiply 19 by 17 using the multiply tool. Let me do that.",
+            "provider_specific_fields": {
+              "reasoning": "The user wants me to multiply 19 by 17 using the multiply tool. Let me do that."
+            },
+            "content": null
+          },
+          "provider_specific_fields": {
+            "token_ids": null,
+            "stop_reason": null,
+            "weight_versions": null
+          },
+          "logprobs": null,
+          "stop_reason": null,
+          "token_ids": null
+        }
+      ],
+      "usage": {
+        "completion_tokens": 76,
+        "prompt_tokens": 315,
+        "total_tokens": 391,
+        "completion_tokens_details": {
+          "reasoning_tokens": 21
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "created_cache_tokens": 160
+        }
+      }
+    }
+  },
+  {
+    "case": "chat_tool_json_2",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/chat/completions",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "multiply",
+              "description": "Multiply two integers",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "a": {
+                    "type": "integer"
+                  },
+                  "b": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "a",
+                  "b"
+                ]
+              }
+            }
+          }
+        ],
+        "max_completion_tokens": 1024,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+          },
+          {
+            "role": "assistant",
+            "tool_calls": [
+              {
+                "function": {
+                  "arguments": "{\"a\": 19, \"b\": 17}",
+                  "name": "multiply"
+                },
+                "id": "chatcmpl-tool-8884c840363f063b",
+                "type": "function"
+              }
+            ],
+            "reasoning_content": "The user wants me to multiply 19 by 17 using the multiply tool. Let me do that.",
+            "provider_specific_fields": {
+              "reasoning": "The user wants me to multiply 19 by 17 using the multiply tool. Let me do that."
+            },
+            "content": null
+          },
+          {
+            "role": "tool",
+            "tool_call_id": "chatcmpl-tool-8884c840363f063b",
+            "content": "323"
+          }
+        ]
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "2b5302df-a04d-4b92-9caf-2e16bc2be050",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "6.929399999999999e-05"
+    },
+    "body": {
+      "id": "chatcmpl-a4869d888d8fbaff",
+      "created": 1795666367,
+      "model": "nodecode/nodecode-cyber-v1",
+      "object": "chat.completion",
+      "system_fingerprint": "vllm-0.32.1rc1.dev36+ge68efc685-tp4-866259b6",
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "The product of 19 and 17 is **323**.",
+            "role": "assistant"
+          },
+          "provider_specific_fields": {
+            "token_ids": null,
+            "stop_reason": null,
+            "weight_versions": null
+          },
+          "logprobs": null,
+          "stop_reason": null,
+          "token_ids": null
+        }
+      ],
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 403,
+        "total_tokens": 417,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 256,
+          "created_cache_tokens": 128
+        }
+      }
+    }
+  },
+  {
+    "case": "chat_tool_stream_1",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/chat/completions",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "multiply",
+              "description": "Multiply two integers",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "a": {
+                    "type": "integer"
+                  },
+                  "b": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "a",
+                  "b"
+                ]
+              }
+            }
+          }
+        ],
+        "max_completion_tokens": 1024,
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+          }
+        ]
+      }
+    },
+    "status": 200,
+    "headers": {
+      "x-litellm-call-id": "01f35df5-e800-4938-8cd5-23331bb5e93b",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "content-type": "text/event-stream; charset=utf-8"
+    },
+    "events": [
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-9e8098b41390f826",
+          "created": 1795666367,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "content": "",
+                "role": "assistant"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-9e8098b41390f826",
+          "created": 1795666367,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "reasoning_content": "The"
+              },
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-9e8098b41390f826",
+          "created": 1795666367,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "reasoning_content": " user wants"
+              },
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-9e8098b41390f826",
+          "created": 1795666367,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "reasoning_content": " me to multiply 19 by"
+              },
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-9e8098b41390f826",
+          "created": 1795666367,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "reasoning_content": " 17 using the multiply tool"
+              },
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-9e8098b41390f826",
+          "created": 1795666367,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "reasoning_content": "."
+              },
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-9e8098b41390f826",
+          "created": 1795666367,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "tool_calls": [
+                  {
+                    "id": "chatcmpl-tool-9da8a2948aafd482",
+                    "function": {
+                      "arguments": "",
+                      "name": "multiply"
+                    },
+                    "type": "function",
+                    "index": 0
+                  }
+                ]
+              },
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-9e8098b41390f826",
+          "created": 1795666367,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "tool_calls": [
+                  {
+                    "function": {
+                      "arguments": "{\"a\": "
+                    },
+                    "type": "function",
+                    "index": 0
+                  }
+                ]
+              },
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-9e8098b41390f826",
+          "created": 1795666367,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "tool_calls": [
+                  {
+                    "function": {
+                      "arguments": "19, \"b\": "
+                    },
+                    "type": "function",
+                    "index": 0
+                  }
+                ]
+              },
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-9e8098b41390f826",
+          "created": 1795666367,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "tool_calls": [
+                  {
+                    "function": {
+                      "arguments": "17}"
+                    },
+                    "type": "function",
+                    "index": 0
+                  }
+                ]
+              },
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-9e8098b41390f826",
+          "created": 1795666367,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "delta": {},
+              "stop_reason": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-9e8098b41390f826",
+          "created": 1795666367,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "system_fingerprint": "vllm-0.32.1rc1.dev36+ge68efc685-tp4-866259b6",
+          "choices": [],
+          "usage": {
+            "completion_tokens": 71,
+            "prompt_tokens": 315,
+            "total_tokens": 386,
+            "completion_tokens_details": {
+              "reasoning_tokens": 16
+            },
+            "prompt_tokens_details": {
+              "cached_tokens": 256,
+              "created_cache_tokens": 0
+            },
+            "cost": 0.000115494
+          }
+        }
+      },
+      {
+        "event": null,
+        "data": "[DONE]"
+      }
+    ]
+  },
+  {
+    "case": "chat_tool_stream_2",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/chat/completions",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "multiply",
+              "description": "Multiply two integers",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "a": {
+                    "type": "integer"
+                  },
+                  "b": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "a",
+                  "b"
+                ]
+              }
+            }
+          }
+        ],
+        "max_completion_tokens": 1024,
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+          },
+          {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "chatcmpl-tool-9da8a2948aafd482",
+                "type": "function",
+                "function": {
+                  "name": "multiply",
+                  "arguments": "{\"a\": 19, \"b\": 17}"
+                }
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "tool_call_id": "chatcmpl-tool-9da8a2948aafd482",
+            "content": "323"
+          }
+        ]
+      }
+    },
+    "status": 200,
+    "headers": {
+      "x-litellm-call-id": "c87af10e-d669-439c-ba70-bbc7178bc6f6",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "content-type": "text/event-stream; charset=utf-8"
+    },
+    "events": [
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-acbc74c8a88b536f",
+          "created": 1795666368,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "content": "",
+                "role": "assistant"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-acbc74c8a88b536f",
+          "created": 1795666368,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "content": "19 \u00d7 17 ="
+              },
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-acbc74c8a88b536f",
+          "created": 1795666368,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "choices": [
+            {
+              "index": 0,
+              "delta": {
+                "content": " **323**"
+              },
+              "stop_reason": null,
+              "token_ids": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-acbc74c8a88b536f",
+          "created": 1795666368,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "system_fingerprint": "vllm-0.32.1rc1.dev36+ge68efc685-tp4-866259b6",
+          "choices": [
+            {
+              "finish_reason": "stop",
+              "index": 0,
+              "delta": {},
+              "stop_reason": null
+            }
+          ]
+        }
+      },
+      {
+        "event": null,
+        "data": {
+          "id": "chatcmpl-acbc74c8a88b536f",
+          "created": 1795666368,
+          "model": "nodecode/nodecode-cyber-v1",
+          "object": "chat.completion.chunk",
+          "system_fingerprint": "vllm-0.32.1rc1.dev36+ge68efc685-tp4-866259b6",
+          "choices": [],
+          "usage": {
+            "completion_tokens": 10,
+            "prompt_tokens": 382,
+            "total_tokens": 392,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_tokens_details": {
+              "cached_tokens": 256,
+              "created_cache_tokens": 0
+            },
+            "cost": 5.7084000000000004e-05
+          }
+        }
+      },
+      {
+        "event": null,
+        "data": "[DONE]"
+      }
+    ]
+  },
+  {
+    "case": "responses_tool_json_1",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/responses",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "type": "function",
+            "name": "multiply",
+            "description": "Multiply two integers",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "a": {
+                  "type": "integer"
+                },
+                "b": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "a",
+                "b"
+              ]
+            }
+          }
+        ],
+        "max_output_tokens": 1024,
+        "input": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "3dd3a52c-4698-4045-af2b-727ba39be0fd",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "0.000122094"
+    },
+    "body": {
+      "id": "resp_hp1VTJRN3W5EdGA-nVhjkGDsBQIj0OfHFBq3OnIGWAODgxblQqP3Z195nQT3lUfU2pgoIGUOEXdjyuSa3AqMyt8_TVOiDzaJ-DD_9PU4BzkGtbJtO1q5nVQL3osqj2CAVIQmuEAiuiL-TOsDMbbPN9-v9s7fFpVbXMPO2fHVcrbrpDa4Sg16sueOwJgQFgEydsjbGewtrpuUvvzmH10nsho500hXe9jLWkS3sW30nnVDLXrXKk1-sL2tp2mLQg3PqhUVuL6iUIBzeBI9qEUj8NwI4YDZdjBQ-c0iMb2kl4903wJuMlBVCkEJP_2ozs9w9K1OAplnktNFIoaaiM2Q1BBu6dpVzld0sgcBhbchowDH-ElB9i2e3HBL6Kge7w2vJx1fwzfVZmlJINr6Tkvks8vpbKI6D3V78oSwOOGOxR44gvJa9pceU8sP1GOPpQ==",
+      "created_at": 1795666368,
+      "error": null,
+      "incomplete_details": null,
+      "instructions": null,
+      "metadata": {},
+      "model": "nodecode/nodecode-cyber-v1",
+      "object": "response",
+      "output": [
+        {
+          "id": "rs_01a2160e58137fa39437c70ad65573de_0",
+          "summary": [],
+          "type": "reasoning",
+          "content": [
+            {
+              "text": "We need answer. Need use multiply tool. Call multiply 19 17 =323. Then tell.",
+              "type": "reasoning_text"
+            }
+          ],
+          "encrypted_content": "nc1:We need answer. Need use multiply tool. Call multiply 19 17 =323. Then tell."
+        },
+        {
+          "arguments": "{\"a\": 19, \"b\": 17}",
+          "call_id": "chatcmpl-tool-bc5911155a81e83b",
+          "name": "multiply",
+          "type": "function_call",
+          "id": "fc_01a2160e58137fa39437c70ad65573de_1",
+          "namespace": null,
+          "status": "completed"
+        }
+      ],
+      "parallel_tool_calls": true,
+      "temperature": null,
+      "tool_choice": "auto",
+      "tools": [
+        {
+          "name": "multiply",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "a": {
+                "type": "integer"
+              },
+              "b": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "a",
+              "b"
+            ]
+          },
+          "strict": null,
+          "type": "function",
+          "defer_loading": null,
+          "description": "Multiply two integers"
+        }
+      ],
+      "top_p": null,
+      "max_output_tokens": 1024,
+      "previous_response_id": null,
+      "reasoning": null,
+      "status": "completed",
+      "text": null,
+      "truncation": "disabled",
+      "usage": {
+        "input_tokens": 315,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256,
+          "cached_tokens_details": null,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": null
+        },
+        "output_tokens": 76,
+        "output_tokens_details": {
+          "audio_tokens": null,
+          "reasoning_tokens": 21,
+          "text_tokens": null
+        },
+        "total_tokens": 391,
+        "cost": null
+      },
+      "user": null,
+      "store": false
+    }
+  },
+  {
+    "case": "responses_tool_json_2_previous_response_id",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/responses",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "type": "function",
+            "name": "multiply",
+            "description": "Multiply two integers",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "a": {
+                  "type": "integer"
+                },
+                "b": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "a",
+                "b"
+              ]
+            }
+          }
+        ],
+        "max_output_tokens": 1024,
+        "previous_response_id": "resp_hp1VTJRN3W5EdGA-nVhjkGDsBQIj0OfHFBq3OnIGWAODgxblQqP3Z195nQT3lUfU2pgoIGUOEXdjyuSa3AqMyt8_TVOiDzaJ-DD_9PU4BzkGtbJtO1q5nVQL3osqj2CAVIQmuEAiuiL-TOsDMbbPN9-v9s7fFpVbXMPO2fHVcrbrpDa4Sg16sueOwJgQFgEydsjbGewtrpuUvvzmH10nsho500hXe9jLWkS3sW30nnVDLXrXKk1-sL2tp2mLQg3PqhUVuL6iUIBzeBI9qEUj8NwI4YDZdjBQ-c0iMb2kl4903wJuMlBVCkEJP_2ozs9w9K1OAplnktNFIoaaiM2Q1BBu6dpVzld0sgcBhbchowDH-ElB9i2e3HBL6Kge7w2vJx1fwzfVZmlJINr6Tkvks8vpbKI6D3V78oSwOOGOxR44gvJa9pceU8sP1GOPpQ==",
+        "input": [
+          {
+            "type": "function_call_output",
+            "call_id": "chatcmpl-tool-bc5911155a81e83b",
+            "output": "323"
+          }
+        ]
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "70d9ac2f-7ddc-4263-b3d6-ff34b013126f",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: NodecodeException - Responses are not stored here: send the whole conversation as `input`, with `store: false`.\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400",
+        "provider_specific_fields": {
+          "code": "previous_response_id_unsupported",
+          "request_id": "01a2160e-5a81-70c1-bc2c-4f8170021b59"
+        }
+      }
+    }
+  },
+  {
+    "case": "responses_tool_json_2_resent_history",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/responses",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "type": "function",
+            "name": "multiply",
+            "description": "Multiply two integers",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "a": {
+                  "type": "integer"
+                },
+                "b": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "a",
+                "b"
+              ]
+            }
+          }
+        ],
+        "max_output_tokens": 1024,
+        "input": [
+          {
+            "role": "user",
+            "content": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+          },
+          {
+            "type": "function_call",
+            "call_id": "chatcmpl-tool-bc5911155a81e83b",
+            "name": "multiply",
+            "arguments": "{\"a\": 19, \"b\": 17}"
+          },
+          {
+            "type": "function_call_output",
+            "call_id": "chatcmpl-tool-bc5911155a81e83b",
+            "output": "323"
+          }
+        ]
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "53441907-688c-48fa-b993-4a4e9f5b5ffa",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "5.7084000000000004e-05"
+    },
+    "body": {
+      "id": "resp_ugHdxbMC1k4sQJn2LdsME6VufAdCitTrURjQkJ0nODZq_iwWNgY6gxfTwaiG2sWXfhFvKGdpAIi31ojd26DbtdCyAxklA3L7Fhfn8n6mHckrfCI76cAbeF-QXZA6F0q2XSwmFrSOA_b49PZt2TgdogDXDpovqEiK9XkX4VcKEt5aip5w9WIfEjvGb_ut0QP8ffUMBc_p78FTqJlIoyiqQQQeEAiabvdrLlLBet_XdLIkit8xPg77HYg6csqHsnmsZXwEOxXnwYTnoGJxCtlJnJCyclL9WnHPEmMpsoK9dnbRQIy_kLxoQJB5w-mAW-bjD5BAc3tr7Qe1NGd8Tix1bTR7FpDB7sYIoMoC0npxxQoKXEp20AxZc1FVBOujYiTtNxVhlWFdMSfNCQ2PfBcjVyZdtv2pBcrxi0ApdMK-9qZiwUw72ccM4uJkXQam_A==",
+      "created_at": 1795666369,
+      "error": null,
+      "incomplete_details": null,
+      "instructions": null,
+      "metadata": {},
+      "model": "nodecode/nodecode-cyber-v1",
+      "object": "response",
+      "output": [
+        {
+          "id": "msg_01a2160e5add7210aaec846e371b353a_0",
+          "content": [
+            {
+              "annotations": [],
+              "text": "19 \u00d7 17 = **323**",
+              "type": "output_text",
+              "logprobs": []
+            }
+          ],
+          "role": "assistant",
+          "status": "completed",
+          "type": "message",
+          "phase": null
+        }
+      ],
+      "parallel_tool_calls": true,
+      "temperature": null,
+      "tool_choice": "auto",
+      "tools": [
+        {
+          "name": "multiply",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "a": {
+                "type": "integer"
+              },
+              "b": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "a",
+              "b"
+            ]
+          },
+          "strict": null,
+          "type": "function",
+          "defer_loading": null,
+          "description": "Multiply two integers"
+        }
+      ],
+      "top_p": null,
+      "max_output_tokens": 1024,
+      "previous_response_id": null,
+      "reasoning": null,
+      "status": "completed",
+      "text": null,
+      "truncation": "disabled",
+      "usage": {
+        "input_tokens": 382,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256,
+          "cached_tokens_details": null,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": null
+        },
+        "output_tokens": 10,
+        "output_tokens_details": {
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "text_tokens": null
+        },
+        "total_tokens": 392,
+        "cost": null
+      },
+      "user": null,
+      "store": false
+    }
+  },
+  {
+    "case": "responses_tool_stream_1",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/responses",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "type": "function",
+            "name": "multiply",
+            "description": "Multiply two integers",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "a": {
+                  "type": "integer"
+                },
+                "b": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "a",
+                "b"
+              ]
+            }
+          }
+        ],
+        "max_output_tokens": 1024,
+        "stream": true,
+        "input": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+      }
+    },
+    "status": 200,
+    "headers": {
+      "x-litellm-call-id": "28d24d82-6737-4381-89fd-a7371622b10b",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "content-type": "text/event-stream; charset=utf-8"
+    },
+    "events": [
+      {
+        "event": "response.created",
+        "data": {
+          "type": "response.created",
+          "response": {
+            "id": "resp_w0ykYtzNH78ax6IxVrxuueGJapIJ9d_RIBJt7Aq-VBHOgoUAdlvZ4D2o0gXIdJZk6uxu0nqoezXll0XO5G1HCNg98hUeNwTOMRIaNSvCsMaPEYKmGCBsh3mwY9bbM3wox_d_UZ_70L5ij__wRk5HLgcGLf0d05LjLaDOq3yRKh00ATRl3vxR8LMI9GSGnExUKaQXQm68BsUSeiDDec7UavH615TWRMXIUPS1DXqovBUjmPRCLEL8c8AmkrDZsI-gnTAKgvwI4ihoWDdw_JuMSYxZgc0V68Pf9DGW9PhPtu-kwU2HEy23wBZcPnz1IOknqTImiNUhc165H79HR1OujF3HbPd9o3svWKOh8rxpCuviRlov2_A3QSvW5cW0rR8W8Kc8ZPczd4r6-SuhPc11ucGo_JFMMufsCfuOObM35vFYmTZtkea1TkYOHs6JeQ==",
+            "created_at": 1795666369,
+            "metadata": {},
+            "model": "nodecode/nodecode-cyber-v1",
+            "object": "response",
+            "output": [],
+            "parallel_tool_calls": true,
+            "tool_choice": "auto",
+            "tools": [
+              {
+                "name": "multiply",
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "a": {
+                      "type": "integer"
+                    },
+                    "b": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "a",
+                    "b"
+                  ]
+                },
+                "type": "function",
+                "description": "Multiply two integers"
+              }
+            ],
+            "max_output_tokens": 1024,
+            "status": "in_progress",
+            "truncation": "disabled",
+            "store": false
+          },
+          "sequence_number": 0,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.in_progress",
+        "data": {
+          "type": "response.in_progress",
+          "response": {
+            "id": "resp_w0ykYtzNH78ax6IxVrxuueGJapIJ9d_RIBJt7Aq-VBHOgoUAdlvZ4D2o0gXIdJZk6uxu0nqoezXll0XO5G1HCNg98hUeNwTOMRIaNSvCsMaPEYKmGCBsh3mwY9bbM3wox_d_UZ_70L5ij__wRk5HLgcGLf0d05LjLaDOq3yRKh00ATRl3vxR8LMI9GSGnExUKaQXQm68BsUSeiDDec7UavH615TWRMXIUPS1DXqovBUjmPRCLEL8c8AmkrDZsI-gnTAKgvwI4ihoWDdw_JuMSYxZgc0V68Pf9DGW9PhPtu-kwU2HEy23wBZcPnz1IOknqTImiNUhc165H79HR1OujF3HbPd9o3svWKOh8rxpCuviRlov2_A3QSvW5cW0rR8W8Kc8ZPczd4r6-SuhPc11ucGo_JFMMufsCfuOObM35vFYmTZtkea1TkYOHs6JeQ==",
+            "created_at": 1795666369,
+            "metadata": {},
+            "model": "nodecode/nodecode-cyber-v1",
+            "object": "response",
+            "output": [],
+            "parallel_tool_calls": true,
+            "tool_choice": "auto",
+            "tools": [
+              {
+                "name": "multiply",
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "a": {
+                      "type": "integer"
+                    },
+                    "b": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "a",
+                    "b"
+                  ]
+                },
+                "type": "function",
+                "description": "Multiply two integers"
+              }
+            ],
+            "max_output_tokens": 1024,
+            "status": "in_progress",
+            "truncation": "disabled",
+            "store": false
+          },
+          "sequence_number": 1,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.output_item.added",
+        "data": {
+          "type": "response.output_item.added",
+          "output_index": 0,
+          "item": {
+            "type": "function_call",
+            "id": "fc_01a2160e5c097e62885b77565a96c533_0",
+            "call_id": "chatcmpl-tool-834741d14e5c1f49",
+            "name": "multiply",
+            "arguments": "",
+            "status": "in_progress"
+          },
+          "sequence_number": 2,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.function_call_arguments.delta",
+        "data": {
+          "type": "response.function_call_arguments.delta",
+          "item_id": "fc_01a2160e5c097e62885b77565a96c533_0",
+          "output_index": 0,
+          "delta": "{\"a\": ",
+          "sequence_number": 3,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.function_call_arguments.delta",
+        "data": {
+          "type": "response.function_call_arguments.delta",
+          "item_id": "fc_01a2160e5c097e62885b77565a96c533_0",
+          "output_index": 0,
+          "delta": "19, \"b\": ",
+          "sequence_number": 4,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.function_call_arguments.delta",
+        "data": {
+          "type": "response.function_call_arguments.delta",
+          "item_id": "fc_01a2160e5c097e62885b77565a96c533_0",
+          "output_index": 0,
+          "delta": "17}",
+          "sequence_number": 5,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.function_call_arguments.done",
+        "data": {
+          "type": "response.function_call_arguments.done",
+          "item_id": "fc_01a2160e5c097e62885b77565a96c533_0",
+          "output_index": 0,
+          "arguments": "{\"a\": 19, \"b\": 17}",
+          "sequence_number": 6,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.output_item.done",
+        "data": {
+          "type": "response.output_item.done",
+          "output_index": 0,
+          "sequence_number": 7,
+          "item": {
+            "type": "function_call",
+            "id": "fc_01a2160e5c097e62885b77565a96c533_0",
+            "call_id": "chatcmpl-tool-834741d14e5c1f49",
+            "name": "multiply",
+            "arguments": "{\"a\": 19, \"b\": 17}",
+            "status": "completed"
+          },
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.completed",
+        "data": {
+          "type": "response.completed",
+          "response": {
+            "id": "resp_w0ykYtzNH78ax6IxVrxuueGJapIJ9d_RIBJt7Aq-VBHOgoUAdlvZ4D2o0gXIdJZk6uxu0nqoezXll0XO5G1HCNg98hUeNwTOMRIaNSvCsMaPEYKmGCBsh3mwY9bbM3wox_d_UZ_70L5ij__wRk5HLgcGLf0d05LjLaDOq3yRKh00ATRl3vxR8LMI9GSGnExUKaQXQm68BsUSeiDDec7UavH615TWRMXIUPS1DXqovBUjmPRCLEL8c8AmkrDZsI-gnTAKgvwI4ihoWDdw_JuMSYxZgc0V68Pf9DGW9PhPtu-kwU2HEy23wBZcPnz1IOknqTImiNUhc165H79HR1OujF3HbPd9o3svWKOh8rxpCuviRlov2_A3QSvW5cW0rR8W8Kc8ZPczd4r6-SuhPc11ucGo_JFMMufsCfuOObM35vFYmTZtkea1TkYOHs6JeQ==",
+            "created_at": 1795666369,
+            "metadata": {},
+            "model": "nodecode/nodecode-cyber-v1",
+            "object": "response",
+            "output": [
+              {
+                "arguments": "{\"a\": 19, \"b\": 17}",
+                "call_id": "chatcmpl-tool-834741d14e5c1f49",
+                "name": "multiply",
+                "type": "function_call",
+                "id": "fc_01a2160e5c097e62885b77565a96c533_0",
+                "status": "completed"
+              }
+            ],
+            "parallel_tool_calls": true,
+            "tool_choice": "auto",
+            "tools": [
+              {
+                "name": "multiply",
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "a": {
+                      "type": "integer"
+                    },
+                    "b": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "a",
+                    "b"
+                  ]
+                },
+                "type": "function",
+                "description": "Multiply two integers"
+              }
+            ],
+            "max_output_tokens": 1024,
+            "status": "completed",
+            "truncation": "disabled",
+            "usage": {
+              "input_tokens": 315,
+              "input_tokens_details": {
+                "cached_tokens": 256
+              },
+              "output_tokens": 55,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 370,
+              "cost": 9.4374e-05
+            },
+            "store": false
+          },
+          "sequence_number": 8,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      }
+    ]
+  },
+  {
+    "case": "responses_tool_stream_2_previous_response_id",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/responses",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "type": "function",
+            "name": "multiply",
+            "description": "Multiply two integers",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "a": {
+                  "type": "integer"
+                },
+                "b": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "a",
+                "b"
+              ]
+            }
+          }
+        ],
+        "max_output_tokens": 1024,
+        "stream": true,
+        "previous_response_id": "resp_w0ykYtzNH78ax6IxVrxuueGJapIJ9d_RIBJt7Aq-VBHOgoUAdlvZ4D2o0gXIdJZk6uxu0nqoezXll0XO5G1HCNg98hUeNwTOMRIaNSvCsMaPEYKmGCBsh3mwY9bbM3wox_d_UZ_70L5ij__wRk5HLgcGLf0d05LjLaDOq3yRKh00ATRl3vxR8LMI9GSGnExUKaQXQm68BsUSeiDDec7UavH615TWRMXIUPS1DXqovBUjmPRCLEL8c8AmkrDZsI-gnTAKgvwI4ihoWDdw_JuMSYxZgc0V68Pf9DGW9PhPtu-kwU2HEy23wBZcPnz1IOknqTImiNUhc165H79HR1OujF3HbPd9o3svWKOh8rxpCuviRlov2_A3QSvW5cW0rR8W8Kc8ZPczd4r6-SuhPc11ucGo_JFMMufsCfuOObM35vFYmTZtkea1TkYOHs6JeQ==",
+        "input": [
+          {
+            "type": "function_call_output",
+            "call_id": "chatcmpl-tool-834741d14e5c1f49",
+            "output": "323"
+          }
+        ]
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "3b0a9035-6248-4a22-a46c-da7ec4faeda7",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: NodecodeException - Responses are not stored here: send the whole conversation as `input`, with `store: false`.\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400",
+        "provider_specific_fields": {
+          "code": "previous_response_id_unsupported",
+          "request_id": "01a2160e-5daa-7092-802e-b0f4b2193a75"
+        }
+      }
+    }
+  },
+  {
+    "case": "responses_tool_stream_2_resent_history",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/responses",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "type": "function",
+            "name": "multiply",
+            "description": "Multiply two integers",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "a": {
+                  "type": "integer"
+                },
+                "b": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "a",
+                "b"
+              ]
+            }
+          }
+        ],
+        "max_output_tokens": 1024,
+        "stream": true,
+        "input": [
+          {
+            "role": "user",
+            "content": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+          },
+          {
+            "type": "function_call",
+            "call_id": "chatcmpl-tool-834741d14e5c1f49",
+            "name": "multiply",
+            "arguments": "{\"a\": 19, \"b\": 17}"
+          },
+          {
+            "type": "function_call_output",
+            "call_id": "chatcmpl-tool-834741d14e5c1f49",
+            "output": "323"
+          }
+        ]
+      }
+    },
+    "status": 200,
+    "headers": {
+      "x-litellm-call-id": "e0495faa-847d-4278-85e1-7f939f1ebde5",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "content-type": "text/event-stream; charset=utf-8"
+    },
+    "events": [
+      {
+        "event": "response.created",
+        "data": {
+          "type": "response.created",
+          "response": {
+            "id": "resp_wsl0sYedVvRroynmWF18vOUS1B0qTdgSDk2i1e41PadmamGpZYxHSpqcYDGQXLAWldgLEXlNtsjhngtoaMPGD0_aHdjwszLjR9kOfbf3oyAHapfGG1rp8-DW-EgDhLFaKHYDc5JF0xIvDG7T5LpGPWeaMEryHhFGc1AxGvm7pwBgF0yDhS6CkQN8h83RBbNCNRuYhkeIN0qJ6az-Xgy62bLjsM-K79exfxgZtA266twKfsS6ChKI-kfzW-LqbJOiSy57Ak-ILDti-Doc7RqypYx8tiBJ6tdJLdU40oMYhBoJsnUpgHh7fXrNk_HTHcRRC1aAEA3NZi_aCTSd3p4f55ybZbGaBI_tNKlzo6W5EvV-nBqzyzW9Le_5sCZ26Bh9VqzaT90zLchf54o4eOvBrIBjIoho8Q9wHlkVrQ-HTLXL0_w-pPltsePVIPhqFA==",
+            "created_at": 1795666370,
+            "metadata": {},
+            "model": "nodecode/nodecode-cyber-v1",
+            "object": "response",
+            "output": [],
+            "parallel_tool_calls": true,
+            "tool_choice": "auto",
+            "tools": [
+              {
+                "name": "multiply",
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "a": {
+                      "type": "integer"
+                    },
+                    "b": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "a",
+                    "b"
+                  ]
+                },
+                "type": "function",
+                "description": "Multiply two integers"
+              }
+            ],
+            "max_output_tokens": 1024,
+            "status": "in_progress",
+            "truncation": "disabled",
+            "store": false
+          },
+          "sequence_number": 0,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.in_progress",
+        "data": {
+          "type": "response.in_progress",
+          "response": {
+            "id": "resp_wsl0sYedVvRroynmWF18vOUS1B0qTdgSDk2i1e41PadmamGpZYxHSpqcYDGQXLAWldgLEXlNtsjhngtoaMPGD0_aHdjwszLjR9kOfbf3oyAHapfGG1rp8-DW-EgDhLFaKHYDc5JF0xIvDG7T5LpGPWeaMEryHhFGc1AxGvm7pwBgF0yDhS6CkQN8h83RBbNCNRuYhkeIN0qJ6az-Xgy62bLjsM-K79exfxgZtA266twKfsS6ChKI-kfzW-LqbJOiSy57Ak-ILDti-Doc7RqypYx8tiBJ6tdJLdU40oMYhBoJsnUpgHh7fXrNk_HTHcRRC1aAEA3NZi_aCTSd3p4f55ybZbGaBI_tNKlzo6W5EvV-nBqzyzW9Le_5sCZ26Bh9VqzaT90zLchf54o4eOvBrIBjIoho8Q9wHlkVrQ-HTLXL0_w-pPltsePVIPhqFA==",
+            "created_at": 1795666370,
+            "metadata": {},
+            "model": "nodecode/nodecode-cyber-v1",
+            "object": "response",
+            "output": [],
+            "parallel_tool_calls": true,
+            "tool_choice": "auto",
+            "tools": [
+              {
+                "name": "multiply",
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "a": {
+                      "type": "integer"
+                    },
+                    "b": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "a",
+                    "b"
+                  ]
+                },
+                "type": "function",
+                "description": "Multiply two integers"
+              }
+            ],
+            "max_output_tokens": 1024,
+            "status": "in_progress",
+            "truncation": "disabled",
+            "store": false
+          },
+          "sequence_number": 1,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.output_item.added",
+        "data": {
+          "type": "response.output_item.added",
+          "output_index": 0,
+          "item": {
+            "type": "message",
+            "id": "msg_01a2160e5dfa7e139a38bc375e3b3157_0",
+            "status": "in_progress",
+            "role": "assistant",
+            "content": []
+          },
+          "sequence_number": 2,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.content_part.added",
+        "data": {
+          "type": "response.content_part.added",
+          "item_id": "msg_01a2160e5dfa7e139a38bc375e3b3157_0",
+          "output_index": 0,
+          "content_index": 0,
+          "part": {
+            "type": "output_text",
+            "text": "",
+            "annotations": [],
+            "logprobs": []
+          },
+          "sequence_number": 3,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.output_text.delta",
+        "data": {
+          "type": "response.output_text.delta",
+          "item_id": "msg_01a2160e5dfa7e139a38bc375e3b3157_0",
+          "output_index": 0,
+          "content_index": 0,
+          "delta": "19 \u00d7 17 =",
+          "logprobs": [],
+          "sequence_number": 4,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.output_text.delta",
+        "data": {
+          "type": "response.output_text.delta",
+          "item_id": "msg_01a2160e5dfa7e139a38bc375e3b3157_0",
+          "output_index": 0,
+          "content_index": 0,
+          "delta": " **323**",
+          "logprobs": [],
+          "sequence_number": 5,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.output_text.done",
+        "data": {
+          "type": "response.output_text.done",
+          "item_id": "msg_01a2160e5dfa7e139a38bc375e3b3157_0",
+          "output_index": 0,
+          "content_index": 0,
+          "text": "19 \u00d7 17 = **323**",
+          "logprobs": [],
+          "sequence_number": 6,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.content_part.done",
+        "data": {
+          "type": "response.content_part.done",
+          "item_id": "msg_01a2160e5dfa7e139a38bc375e3b3157_0",
+          "output_index": 0,
+          "content_index": 0,
+          "part": {
+            "type": "output_text",
+            "text": "19 \u00d7 17 = **323**",
+            "annotations": [],
+            "logprobs": []
+          },
+          "sequence_number": 7,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.output_item.done",
+        "data": {
+          "type": "response.output_item.done",
+          "output_index": 0,
+          "sequence_number": 8,
+          "item": {
+            "type": "message",
+            "id": "msg_01a2160e5dfa7e139a38bc375e3b3157_0",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "19 \u00d7 17 = **323**",
+                "annotations": [],
+                "logprobs": []
+              }
+            ]
+          },
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      },
+      {
+        "event": "response.completed",
+        "data": {
+          "type": "response.completed",
+          "response": {
+            "id": "resp_wsl0sYedVvRroynmWF18vOUS1B0qTdgSDk2i1e41PadmamGpZYxHSpqcYDGQXLAWldgLEXlNtsjhngtoaMPGD0_aHdjwszLjR9kOfbf3oyAHapfGG1rp8-DW-EgDhLFaKHYDc5JF0xIvDG7T5LpGPWeaMEryHhFGc1AxGvm7pwBgF0yDhS6CkQN8h83RBbNCNRuYhkeIN0qJ6az-Xgy62bLjsM-K79exfxgZtA266twKfsS6ChKI-kfzW-LqbJOiSy57Ak-ILDti-Doc7RqypYx8tiBJ6tdJLdU40oMYhBoJsnUpgHh7fXrNk_HTHcRRC1aAEA3NZi_aCTSd3p4f55ybZbGaBI_tNKlzo6W5EvV-nBqzyzW9Le_5sCZ26Bh9VqzaT90zLchf54o4eOvBrIBjIoho8Q9wHlkVrQ-HTLXL0_w-pPltsePVIPhqFA==",
+            "created_at": 1795666370,
+            "metadata": {},
+            "model": "nodecode/nodecode-cyber-v1",
+            "object": "response",
+            "output": [
+              {
+                "id": "msg_01a2160e5dfa7e139a38bc375e3b3157_0",
+                "content": [
+                  {
+                    "annotations": [],
+                    "text": "19 \u00d7 17 = **323**",
+                    "type": "output_text",
+                    "logprobs": []
+                  }
+                ],
+                "role": "assistant",
+                "status": "completed",
+                "type": "message"
+              }
+            ],
+            "parallel_tool_calls": true,
+            "tool_choice": "auto",
+            "tools": [
+              {
+                "name": "multiply",
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "a": {
+                      "type": "integer"
+                    },
+                    "b": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "a",
+                    "b"
+                  ]
+                },
+                "type": "function",
+                "description": "Multiply two integers"
+              }
+            ],
+            "max_output_tokens": 1024,
+            "status": "completed",
+            "truncation": "disabled",
+            "usage": {
+              "input_tokens": 382,
+              "input_tokens_details": {
+                "cached_tokens": 256
+              },
+              "output_tokens": 10,
+              "output_tokens_details": {
+                "reasoning_tokens": 0
+              },
+              "total_tokens": 392,
+              "cost": 5.7084000000000004e-05
+            },
+            "store": false
+          },
+          "sequence_number": 9,
+          "model": "nodecode/nodecode-cyber-v1"
+        }
+      }
+    ]
+  },
+  {
+    "case": "messages_tool_json_1",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "name": "multiply",
+            "description": "Multiply two integers",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "a": {
+                  "type": "integer"
+                },
+                "b": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "a",
+                "b"
+              ]
+            }
+          }
+        ],
+        "max_tokens": 1024,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+          }
+        ]
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "c6e1bb3f-a9e1-4fb4-9714-4b47140d986f",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "0.000115494"
+    },
+    "body": {
+      "id": "msg_01a2160e5f2077b2a7aa98577db59386",
+      "type": "message",
+      "role": "assistant",
+      "model": "nodecode/nodecode-cyber-v1",
+      "content": [
+        {
+          "type": "thinking",
+          "thinking": "The user wants me to multiply 19 by 17 using the multiply tool.",
+          "signature": ""
+        },
+        {
+          "type": "tool_use",
+          "id": "chatcmpl-tool-ba2c93873b36017a",
+          "name": "multiply",
+          "input": {
+            "a": 19,
+            "b": 17
+          }
+        }
+      ],
+      "stop_reason": "tool_use",
+      "stop_sequence": null,
+      "usage": {
+        "input_tokens": 59,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 256,
+        "output_tokens": 71
+      }
+    }
+  },
+  {
+    "case": "messages_tool_json_2",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "name": "multiply",
+            "description": "Multiply two integers",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "a": {
+                  "type": "integer"
+                },
+                "b": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "a",
+                "b"
+              ]
+            }
+          }
+        ],
+        "max_tokens": 1024,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+          },
+          {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "thinking",
+                "thinking": "The user wants me to multiply 19 by 17 using the multiply tool.",
+                "signature": ""
+              },
+              {
+                "type": "tool_use",
+                "id": "chatcmpl-tool-ba2c93873b36017a",
+                "name": "multiply",
+                "input": {
+                  "a": 19,
+                  "b": 17
+                }
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "tool_result",
+                "tool_use_id": "chatcmpl-tool-ba2c93873b36017a",
+                "content": "323"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "e0cdac10-8a8a-4007-895a-df892715dd84",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "6.2364e-05"
+    },
+    "body": {
+      "id": "msg_01a2160e612f7e01a44136913bc7179e",
+      "type": "message",
+      "role": "assistant",
+      "model": "nodecode/nodecode-cyber-v1",
+      "content": [
+        {
+          "type": "text",
+          "text": "19 \u00d7 17 = **323**"
+        }
+      ],
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "usage": {
+        "input_tokens": 142,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 256,
+        "output_tokens": 10
+      }
+    }
+  },
+  {
+    "case": "messages_tool_stream_1",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "name": "multiply",
+            "description": "Multiply two integers",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "a": {
+                  "type": "integer"
+                },
+                "b": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "a",
+                "b"
+              ]
+            }
+          }
+        ],
+        "max_tokens": 1024,
+        "stream": true,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+          }
+        ]
+      }
+    },
+    "status": 200,
+    "headers": {
+      "x-litellm-call-id": "2e2f8098-a888-47a7-aae6-a9a0b412fd0b",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "content-type": "text/event-stream; charset=utf-8"
+    },
+    "events": [
+      {
+        "event": "message_start",
+        "data": {
+          "type": "message_start",
+          "message": {
+            "id": "msg_01a2160e6286775288c4602eef84e570",
+            "type": "message",
+            "role": "assistant",
+            "model": "nodecode/nodecode-cyber-v1",
+            "content": [],
+            "stop_reason": null,
+            "stop_sequence": null,
+            "usage": {
+              "input_tokens": 0,
+              "output_tokens": 0
+            }
+          }
+        }
+      },
+      {
+        "event": "ping",
+        "data": {
+          "type": "ping"
+        }
+      },
+      {
+        "event": "content_block_start",
+        "data": {
+          "type": "content_block_start",
+          "index": 0,
+          "content_block": {
+            "type": "thinking",
+            "thinking": "",
+            "signature": ""
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "thinking_delta",
+            "thinking": "We"
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "thinking_delta",
+            "thinking": " need use"
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "thinking_delta",
+            "thinking": " multiply tool. Call"
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "thinking_delta",
+            "thinking": " multiply"
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "thinking_delta",
+            "thinking": " 19 17"
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "thinking_delta",
+            "thinking": "."
+          }
+        }
+      },
+      {
+        "event": "content_block_stop",
+        "data": {
+          "type": "content_block_stop",
+          "index": 0
+        }
+      },
+      {
+        "event": "content_block_start",
+        "data": {
+          "type": "content_block_start",
+          "index": 1,
+          "content_block": {
+            "type": "tool_use",
+            "id": "chatcmpl-tool-87990fa965d67a82",
+            "name": "multiply",
+            "input": {}
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "{\"a\": "
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "19, \"b\": "
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 1,
+          "delta": {
+            "type": "input_json_delta",
+            "partial_json": "17}"
+          }
+        }
+      },
+      {
+        "event": "content_block_stop",
+        "data": {
+          "type": "content_block_stop",
+          "index": 1
+        }
+      },
+      {
+        "event": "message_delta",
+        "data": {
+          "type": "message_delta",
+          "delta": {
+            "stop_reason": "tool_use",
+            "stop_sequence": null
+          },
+          "usage": {
+            "input_tokens": 59,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 256,
+            "output_tokens": 68
+          }
+        }
+      },
+      {
+        "event": "message_stop",
+        "data": {
+          "type": "message_stop"
+        }
+      }
+    ]
+  },
+  {
+    "case": "messages_tool_stream_2",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "name": "multiply",
+            "description": "Multiply two integers",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "a": {
+                  "type": "integer"
+                },
+                "b": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "a",
+                "b"
+              ]
+            }
+          }
+        ],
+        "max_tokens": 1024,
+        "stream": true,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+          },
+          {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "thinking",
+                "thinking": "We need use multiply tool. Call multiply 19 17.",
+                "signature": ""
+              },
+              {
+                "type": "tool_use",
+                "id": "chatcmpl-tool-87990fa965d67a82",
+                "name": "multiply",
+                "input": {
+                  "a": 19,
+                  "b": 17
+                }
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "tool_result",
+                "tool_use_id": "chatcmpl-tool-87990fa965d67a82",
+                "content": "323"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "status": 200,
+    "headers": {
+      "x-litellm-call-id": "4e51cdd0-8fdd-493e-9a33-d5d318ac8839",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "content-type": "text/event-stream; charset=utf-8"
+    },
+    "events": [
+      {
+        "event": "message_start",
+        "data": {
+          "type": "message_start",
+          "message": {
+            "id": "msg_01a2160e64ad70919f04114e357be254",
+            "type": "message",
+            "role": "assistant",
+            "model": "nodecode/nodecode-cyber-v1",
+            "content": [],
+            "stop_reason": null,
+            "stop_sequence": null,
+            "usage": {
+              "input_tokens": 0,
+              "output_tokens": 0
+            }
+          }
+        }
+      },
+      {
+        "event": "ping",
+        "data": {
+          "type": "ping"
+        }
+      },
+      {
+        "event": "content_block_start",
+        "data": {
+          "type": "content_block_start",
+          "index": 0,
+          "content_block": {
+            "type": "text",
+            "text": ""
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": "19 \u00d7 17 ="
+          }
+        }
+      },
+      {
+        "event": "content_block_delta",
+        "data": {
+          "type": "content_block_delta",
+          "index": 0,
+          "delta": {
+            "type": "text_delta",
+            "text": " **323**"
+          }
+        }
+      },
+      {
+        "event": "content_block_stop",
+        "data": {
+          "type": "content_block_stop",
+          "index": 0
+        }
+      },
+      {
+        "event": "message_delta",
+        "data": {
+          "type": "message_delta",
+          "delta": {
+            "stop_reason": "end_turn",
+            "stop_sequence": null
+          },
+          "usage": {
+            "input_tokens": 139,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 256,
+            "output_tokens": 10
+          }
+        }
+      },
+      {
+        "event": "message_stop",
+        "data": {
+          "type": "message_stop"
+        }
+      }
+    ]
+  }
+]

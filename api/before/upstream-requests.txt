@@ -1,0 +1,5 @@
+# Every request the before proxy sent to the provider, in order, from its --detailed_debug log.
+# LiteLLM prints the base URL for chat calls. The OpenAI client then appends /chat/completions.
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v1', 'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_completion_tokens': 512, 'extra_body': {}}

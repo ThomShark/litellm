@@ -1,0 +1,8 @@
+model = "nodecode/nodecode-cyber-v1"
+model_provider = "litellm"
+
+[model_providers.litellm]
+name = "LiteLLM proxy"
+base_url = "http://127.0.0.1:<proxy port>/v1"
+env_key = "LITELLM_API_KEY"
+wire_api = "responses"

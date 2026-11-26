@@ -1,0 +1,316 @@
+[
+  {
+    "case": "chat_tool_json_1",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/chat/completions",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "multiply",
+              "description": "Multiply two integers",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "a": {
+                    "type": "integer"
+                  },
+                  "b": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "a",
+                  "b"
+                ]
+              }
+            }
+          }
+        ],
+        "max_completion_tokens": 1024,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+          }
+        ]
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "ce1473d2-389c-4445-b6dd-a14cfcb7e06a",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400"
+      }
+    }
+  },
+  {
+    "case": "chat_tool_stream_1",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/chat/completions",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "multiply",
+              "description": "Multiply two integers",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "a": {
+                    "type": "integer"
+                  },
+                  "b": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "a",
+                  "b"
+                ]
+              }
+            }
+          }
+        ],
+        "max_completion_tokens": 1024,
+        "stream": true,
+        "stream_options": {
+          "include_usage": true
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+          }
+        ]
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "78a7f597-93a1-4bed-80c6-a5d16b7289cc",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400"
+      }
+    }
+  },
+  {
+    "case": "responses_tool_json_1",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/responses",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "type": "function",
+            "name": "multiply",
+            "description": "Multiply two integers",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "a": {
+                  "type": "integer"
+                },
+                "b": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "a",
+                "b"
+              ]
+            }
+          }
+        ],
+        "max_output_tokens": 1024,
+        "input": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "f3c9d69f-5b7d-4317-8dae-e5fc9d038008",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400"
+      }
+    }
+  },
+  {
+    "case": "responses_tool_stream_1",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/responses",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "type": "function",
+            "name": "multiply",
+            "description": "Multiply two integers",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "a": {
+                  "type": "integer"
+                },
+                "b": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "a",
+                "b"
+              ]
+            }
+          }
+        ],
+        "max_output_tokens": 1024,
+        "stream": true,
+        "input": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "e37f4acd-78f8-430e-ab61-f2f41846023c",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400"
+      }
+    }
+  },
+  {
+    "case": "messages_tool_json_1",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "name": "multiply",
+            "description": "Multiply two integers",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "a": {
+                  "type": "integer"
+                },
+                "b": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "a",
+                "b"
+              ]
+            }
+          }
+        ],
+        "max_tokens": 1024,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+          }
+        ]
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "3b7f555c-4be0-4408-abb1-6ea4094cf170",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "type": "error",
+      "error": {
+        "type": "invalid_request_error",
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted."
+      }
+    }
+  },
+  {
+    "case": "messages_tool_stream_1",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "tools": [
+          {
+            "name": "multiply",
+            "description": "Multiply two integers",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "a": {
+                  "type": "integer"
+                },
+                "b": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "a",
+                "b"
+              ]
+            }
+          }
+        ],
+        "max_tokens": 1024,
+        "stream": true,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Use the multiply tool to multiply 19 by 17, then tell me the product."
+          }
+        ]
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "c057a472-05eb-4a9e-a8d7-a6a848a8b832",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "type": "error",
+      "error": {
+        "type": "invalid_request_error",
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted."
+      }
+    }
+  }
+]

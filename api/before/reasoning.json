@@ -1,0 +1,227 @@
+[
+  {
+    "case": "chat_reasoning_none",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/chat/completions",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 2048,
+        "reasoning_effort": "none"
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "e8b37e5f-d73d-4bcb-8156-dbcd868a8915",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400"
+      }
+    }
+  },
+  {
+    "case": "chat_reasoning_max",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/chat/completions",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 2048,
+        "reasoning_effort": "max"
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "bdfbd0aa-9348-408d-8e19-31046bf92940",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "error": {
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted.",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": "400"
+      }
+    }
+  },
+  {
+    "case": "messages_default",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ]
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "99d441a5-5e43-49d5-aaa3-dde5bd785257",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "type": "error",
+      "error": {
+        "type": "invalid_request_error",
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted."
+      }
+    }
+  },
+  {
+    "case": "messages_thinking_disabled",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        }
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "aa471b91-f900-48f1-ab91-7d6ad3cf0d52",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "type": "error",
+      "error": {
+        "type": "invalid_request_error",
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted."
+      }
+    }
+  },
+  {
+    "case": "messages_thinking_disabled_effort_high",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "reasoning_effort": "high"
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "47502029-8bcf-4d03-a758-26571db71444",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "type": "error",
+      "error": {
+        "type": "invalid_request_error",
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted."
+      }
+    }
+  },
+  {
+    "case": "messages_effort_none",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "reasoning_effort": "none"
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "136d1d82-e9f0-4c03-91cf-fcf1e4a8d9b6",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "type": "error",
+      "error": {
+        "type": "invalid_request_error",
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted."
+      }
+    }
+  },
+  {
+    "case": "messages_output_config_low",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4100/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "output_config": {
+          "effort": "low"
+        }
+      }
+    },
+    "status": 400,
+    "headers": {
+      "x-litellm-call-id": "b3680f22-a43a-4495-b18e-7201993d7ed8",
+      "x-litellm-response-cost": "0",
+      "content-type": "application/json"
+    },
+    "body": {
+      "type": "error",
+      "error": {
+        "type": "invalid_request_error",
+        "message": "litellm.BadRequestError: You passed in model=nodecode/nodecode-cyber-v1. There are no healthy deployments for this model\n\nLiteLLM: model group 'nodecode/nodecode-cyber-v1' failed with the error above. No fallback was attempted."
+      }
+    }
+  }
+]

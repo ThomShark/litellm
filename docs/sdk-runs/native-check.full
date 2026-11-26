@@ -1,0 +1,8 @@
+responses -> ['message']
+messages -> ['thinking', 'text']
+chat -> 'OK'
+upstream ('sync', 'POST', 'https://api.nodecode.ai/v1/responses')
+upstream ('async', 'POST', 'https://api.nodecode.ai/v1/messages')
+upstream ('sync', 'POST', 'https://api.nodecode.ai/v1/chat/completions')
+logged ('responses', 'nodecode', 'nodecode-cyber-v1', 4.95e-06)
+logged ('completion', 'nodecode', 'nodecode-cyber-v1', 4.95e-06)

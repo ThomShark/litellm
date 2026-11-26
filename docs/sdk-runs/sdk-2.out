@@ -1,0 +1,1 @@
+SQL injection occurs when an application inserts untrusted user input directly into a database query, letting an attacker alter the SQL logic. This can expose, modify, or delete data and is prevented by parameterized queries, input validation, and least-privilege database accounts.

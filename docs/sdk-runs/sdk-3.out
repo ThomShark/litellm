@@ -1,0 +1,1 @@
+[ChatCompletionMessageToolCall(function=Function(arguments='{"host": "scanme.nmap.org"}', name='get_open_ports'), id='chatcmpl-tool-9ac198a396fb8a0c', type='function')]

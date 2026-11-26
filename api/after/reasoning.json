@@ -1,0 +1,517 @@
+[
+  {
+    "case": "chat_reasoning_none",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/chat/completions",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 2048,
+        "reasoning_effort": "none"
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "6be72bfb-1361-47bb-b96f-17115ba1fbbe",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "8.580000000000001e-06"
+    },
+    "body": {
+      "id": "chatcmpl-ad3126e40a7cb841",
+      "created": 1795666973,
+      "model": "nodecode/nodecode-cyber-v1",
+      "object": "chat.completion",
+      "system_fingerprint": "vllm-0.32.1rc1.dev36+ge68efc685-tp4-866259b6",
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "323",
+            "role": "assistant"
+          },
+          "provider_specific_fields": {
+            "weight_versions": null,
+            "token_ids": null,
+            "stop_reason": null
+          },
+          "logprobs": null,
+          "stop_reason": null,
+          "token_ids": null
+        }
+      ],
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 18,
+        "total_tokens": 20,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "created_cache_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "case": "chat_reasoning_max",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/chat/completions",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "max_completion_tokens": 2048,
+        "reasoning_effort": "max"
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "b02a3e8d-6a6d-4b41-a9c6-980918300cba",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "4.224e-05"
+    },
+    "body": {
+      "id": "chatcmpl-8715338fcf327654",
+      "created": 1795666974,
+      "model": "nodecode/nodecode-cyber-v1",
+      "object": "chat.completion",
+      "system_fingerprint": "vllm-0.32.1rc1.dev36+ge68efc685-tp4-866259b6",
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "323",
+            "role": "assistant",
+            "reasoning_content": "We need answer only number. 19*17=323. Must answer number only.",
+            "provider_specific_fields": {
+              "reasoning": "We need answer only number. 19*17=323. Must answer number only."
+            }
+          },
+          "provider_specific_fields": {
+            "weight_versions": null,
+            "token_ids": null,
+            "stop_reason": null
+          },
+          "logprobs": null,
+          "stop_reason": null,
+          "token_ids": null
+        }
+      ],
+      "usage": {
+        "completion_tokens": 21,
+        "prompt_tokens": 44,
+        "total_tokens": 65,
+        "completion_tokens_details": {
+          "reasoning_tokens": 18
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "created_cache_tokens": 0
+        }
+      }
+    }
+  },
+  {
+    "case": "messages_default",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ]
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "017e6176-94f3-449b-bbf5-6f8a3786c148",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "4.224e-05"
+    },
+    "body": {
+      "id": "msg_01a2161797c373d0adf2b8d46667595d",
+      "type": "message",
+      "role": "assistant",
+      "model": "nodecode/nodecode-cyber-v1",
+      "content": [
+        {
+          "type": "thinking",
+          "thinking": "We need answer only number. 19*17=323. Need comply only number.",
+          "signature": ""
+        },
+        {
+          "type": "text",
+          "text": "323"
+        }
+      ],
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "usage": {
+        "input_tokens": 44,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 21
+      }
+    }
+  },
+  {
+    "case": "messages_thinking_disabled",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        }
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "3672da93-25fa-43eb-b532-803be10af230",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "8.580000000000001e-06"
+    },
+    "body": {
+      "id": "msg_01a21617995a7701b287c32d6e22ace3",
+      "type": "message",
+      "role": "assistant",
+      "model": "nodecode/nodecode-cyber-v1",
+      "content": [
+        {
+          "type": "text",
+          "text": "323"
+        }
+      ],
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "usage": {
+        "input_tokens": 18,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 2
+      }
+    }
+  },
+  {
+    "case": "messages_thinking_disabled_effort_high",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "reasoning_effort": "high"
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "1ead6704-758c-4210-a268-1278785baf3a",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "8.580000000000001e-06"
+    },
+    "body": {
+      "id": "msg_01a216179a747143a6e1aba8542cebc3",
+      "type": "message",
+      "role": "assistant",
+      "model": "nodecode/nodecode-cyber-v1",
+      "content": [
+        {
+          "type": "text",
+          "text": "323"
+        }
+      ],
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "usage": {
+        "input_tokens": 18,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 2
+      }
+    }
+  },
+  {
+    "case": "messages_effort_none",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "reasoning_effort": "none"
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "5c26d19a-3db1-4eee-90d2-7f5133d84bdc",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "3.5640000000000004e-05"
+    },
+    "body": {
+      "id": "msg_01a216179b8d7db3ba11a7bfd9109710",
+      "type": "message",
+      "role": "assistant",
+      "model": "nodecode/nodecode-cyber-v1",
+      "content": [
+        {
+          "type": "thinking",
+          "thinking": "We need answer only number. 19*17=323.",
+          "signature": ""
+        },
+        {
+          "type": "text",
+          "text": "323"
+        }
+      ],
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "usage": {
+        "input_tokens": 44,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 16
+      }
+    }
+  },
+  {
+    "case": "messages_output_config_low",
+    "request": {
+      "method": "POST",
+      "url": "http://127.0.0.1:4101/v1/messages",
+      "body": {
+        "model": "nodecode/nodecode-cyber-v1",
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "output_config": {
+          "effort": "low"
+        }
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "x-litellm-call-id": "377caaa9-d790-44e6-be1f-a720471f82b0",
+      "x-litellm-model-id": "a76abacf4e0730a006c19dde8fb14769c0bb2a73df9b825d3134a51a83c9adc6",
+      "x-litellm-response-cost": "3.5640000000000004e-05"
+    },
+    "body": {
+      "id": "msg_01a216179d2c7fa38ba41b16f12e37d5",
+      "type": "message",
+      "role": "assistant",
+      "model": "nodecode/nodecode-cyber-v1",
+      "content": [
+        {
+          "type": "thinking",
+          "thinking": "We need answer only number. 19*17=323.",
+          "signature": ""
+        },
+        {
+          "type": "text",
+          "text": "323"
+        }
+      ],
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "usage": {
+        "input_tokens": 44,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 16
+      }
+    }
+  },
+  {
+    "case": "direct_messages_thinking_disabled_effort_high",
+    "request": {
+      "method": "POST",
+      "url": "https://api.nodecode.ai/v1/messages",
+      "body": {
+        "model": "nodecode-cyber-v1",
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "thinking": {
+          "type": "disabled"
+        },
+        "reasoning_effort": "high"
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "id": "msg_01a216179efe755392e5a2d57b463d4a",
+      "type": "message",
+      "role": "assistant",
+      "model": "nodecode-cyber-v1",
+      "content": [
+        {
+          "type": "text",
+          "text": "323"
+        }
+      ],
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "usage": {
+        "input_tokens": 18,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 2
+      }
+    }
+  },
+  {
+    "case": "direct_messages_effort_none",
+    "request": {
+      "method": "POST",
+      "url": "https://api.nodecode.ai/v1/messages",
+      "body": {
+        "model": "nodecode-cyber-v1",
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "reasoning_effort": "none"
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "id": "msg_01a21617a0657170a04b81e390e14863",
+      "type": "message",
+      "role": "assistant",
+      "model": "nodecode-cyber-v1",
+      "content": [
+        {
+          "type": "thinking",
+          "thinking": "We need answer only number. 19*17=323. final only.",
+          "signature": ""
+        },
+        {
+          "type": "text",
+          "text": "323"
+        }
+      ],
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "usage": {
+        "input_tokens": 44,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 19
+      }
+    }
+  },
+  {
+    "case": "direct_messages_output_config_low",
+    "request": {
+      "method": "POST",
+      "url": "https://api.nodecode.ai/v1/messages",
+      "body": {
+        "model": "nodecode-cyber-v1",
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 19 * 17? Answer with the number only."
+          }
+        ],
+        "output_config": {
+          "effort": "low"
+        }
+      }
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "id": "msg_01a21617a1b07f31beb50e1cf1906170",
+      "type": "message",
+      "role": "assistant",
+      "model": "nodecode-cyber-v1",
+      "content": [
+        {
+          "type": "thinking",
+          "thinking": "We need answer only number. 19*17=323. Need final only number.",
+          "signature": ""
+        },
+        {
+          "type": "text",
+          "text": "323"
+        }
+      ],
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "usage": {
+        "input_tokens": 44,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 21
+      }
+    }
+  }
+]

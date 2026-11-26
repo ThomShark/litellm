@@ -1,0 +1,173 @@
+# Every request the after proxy sent to the provider, in order, from its --detailed_debug log.
+# LiteLLM prints the base URL for chat calls. The OpenAI client then appends /chat/completions.
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v1', 'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_completion_tokens': 512, 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1
+
+
+POST https://api.nodecode.ai/v1/responses
+{'model': 'nodecode-cyber-v1', 'input': 'What is 19 * 17? Answer with the number only.', 'max_output_tokens': 512}
+
+POST https://api.nodecode.ai/v1/responses
+{'model': 'nodecode-cyber-v1', 'input': 'What is 19 * 17? Answer with the number only.', 'max_output_tokens': 512, 'stream': True}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_tokens': 512, 'model': 'nodecode-cyber-v1', 'stream': False}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_tokens': 512, 'model': 'nodecode-cyber-v1', 'stream': True}
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v1', 'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_completion_tokens': 512, 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v1', 'messages': [{'role': 'user', 'content': 'Use the multiply tool to multiply 19 by 17, then tell me the product.'}], 'max_completion_tokens': 1024, 'tools': [{'type': 'function', 'function': {'name': 'multiply', 'description': 'Multiply two integers', 'parameters': {'type': 'object', 'properties': {'a': {'type': 'integer'}, 'b': {'type': 'integer'}}, 'required': ['a', 'b']}}}], 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v1', 'messages': [{'role': 'user', 'content': 'Use the multiply tool to multiply 19 by 17, then tell me the product.'}, {'role': 'assistant', 'tool_calls': [{'function': {'arguments': '{"a": 19, "b": 17}', 'name': 'multiply'}, 'id': 'chatcmpl-tool-8884c840363f063b', 'type': 'function'}], 'reasoning_content': 'The user wants me to multiply 19 by 17 using the multiply tool. Let me do that.', 'provider_specific_fields': {'reasoning': 'The user wants me to multiply 19 by 17 using the multiply tool. Let me do that.'}}, {'role': 'tool', 'tool_call_id': 'chatcmpl-tool-8884c840363f063b', 'content': '323'}], 'max_completion_tokens': 1024, 'tools': [{'type': 'function', 'function': {'name': 'multiply', 'description': 'Multiply two integers', 'parameters': {'type': 'object', 'properties': {'a': {'type': 'integer'}, 'b': {'type': 'integer'}}, 'required': ['a', 'b']}}}], 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1
+
+
+POST https://api.nodecode.ai/v1
+
+
+POST https://api.nodecode.ai/v1/responses
+{'model': 'nodecode-cyber-v1', 'input': 'Use the multiply tool to multiply 19 by 17, then tell me the product.', 'max_output_tokens': 1024, 'tools': [{'type': 'function', 'name': 'multiply', 'description': 'Multiply two integers', 'parameters': {'type': 'object', 'properties': {'a': {'type': 'integer'}, 'b': {'type': 'integer'}}, 'required': ['a', 'b']}}]}
+
+POST https://api.nodecode.ai/v1/responses
+{'model': 'nodecode-cyber-v1', 'input': [{'type': 'function_call_output', 'call_id': 'chatcmpl-tool-bc5911155a81e83b', 'output': '323'}], 'max_output_tokens': 1024, 'previous_response_id': 'resp_01a2160e58137fa39437c70ad65573de', 'tools': [{'type': 'function', 'name': 'multiply', 'description': 'Multiply two integers', 'parameters': {'type': 'object', 'properties': {'a': {'type': 'integer'}, 'b': {'type': 'integer'}}, 'required': ['a', 'b']}}]}
+
+POST https://api.nodecode.ai/v1/responses
+{'model': 'nodecode-cyber-v1', 'input': [{'role': 'user', 'content': 'Use the multiply tool to multiply 19 by 17, then tell me the product.'}, {'type': 'function_call', 'call_id': 'chatcmpl-tool-bc5911155a81e83b', 'name': 'multiply', 'arguments': '{"a": 19, "b": 17}'}, {'type': 'function_call_output', 'call_id': 'chatcmpl-tool-bc5911155a81e83b', 'output': '323'}], 'max_output_tokens': 1024, 'tools': [{'type': 'function', 'name': 'multiply', 'description': 'Multiply two integers', 'parameters': {'type': 'object', 'properties': {'a': {'type': 'integer'}, 'b': {'type': 'integer'}}, 'required': ['a', 'b']}}]}
+
+POST https://api.nodecode.ai/v1/responses
+{'model': 'nodecode-cyber-v1', 'input': 'Use the multiply tool to multiply 19 by 17, then tell me the product.', 'max_output_tokens': 1024, 'stream': True, 'tools': [{'type': 'function', 'name': 'multiply', 'description': 'Multiply two integers', 'parameters': {'type': 'object', 'properties': {'a': {'type': 'integer'}, 'b': {'type': 'integer'}}, 'required': ['a', 'b']}}]}
+
+POST https://api.nodecode.ai/v1/responses
+{'model': 'nodecode-cyber-v1', 'input': [{'type': 'function_call_output', 'call_id': 'chatcmpl-tool-834741d14e5c1f49', 'output': '323'}], 'max_output_tokens': 1024, 'previous_response_id': 'resp_01a2160e5c097e62885b77565a96c533', 'stream': True, 'tools': [{'type': 'function', 'name': 'multiply', 'description': 'Multiply two integers', 'parameters': {'type': 'object', 'properties': {'a': {'type': 'integer'}, 'b': {'type': 'integer'}}, 'required': ['a', 'b']}}]}
+
+POST https://api.nodecode.ai/v1/responses
+{'model': 'nodecode-cyber-v1', 'input': [{'role': 'user', 'content': 'Use the multiply tool to multiply 19 by 17, then tell me the product.'}, {'type': 'function_call', 'call_id': 'chatcmpl-tool-834741d14e5c1f49', 'name': 'multiply', 'arguments': '{"a": 19, "b": 17}'}, {'type': 'function_call_output', 'call_id': 'chatcmpl-tool-834741d14e5c1f49', 'output': '323'}], 'max_output_tokens': 1024, 'stream': True, 'tools': [{'type': 'function', 'name': 'multiply', 'description': 'Multiply two integers', 'parameters': {'type': 'object', 'properties': {'a': {'type': 'integer'}, 'b': {'type': 'integer'}}, 'required': ['a', 'b']}}]}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'Use the multiply tool to multiply 19 by 17, then tell me the product.'}], 'max_tokens': 1024, 'model': 'nodecode-cyber-v1', 'stream': False, 'tools': [{'name': 'multiply', 'description': 'Multiply two integers', 'input_schema': {'type': 'object', 'properties': {'a': {'type': 'integer'}, 'b': {'type': 'integer'}}, 'required': ['a', 'b']}}]}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'Use the multiply tool to multiply 19 by 17, then tell me the product.'}, {'role': 'assistant', 'content': [{'type': 'thinking', 'thinking': 'The user wants me to multiply 19 by 17 using the multiply tool.', 'signature': ''}, {'type': 'tool_use', 'id': 'chatcmpl-tool-ba2c93873b36017a', 'name': 'multiply', 'input': {'a': 19, 'b': 17}}]}, {'role': 'user', 'content': [{'type': 'tool_result', 'tool_use_id': 'chatcmpl-tool-ba2c93873b36017a', 'content': '323'}]}], 'max_tokens': 1024, 'model': 'nodecode-cyber-v1', 'stream': False, 'tools': [{'name': 'multiply', 'description': 'Multiply two integers', 'input_schema': {'type': 'object', 'properties': {'a': {'type': 'integer'}, 'b': {'type': 'integer'}}, 'required': ['a', 'b']}}]}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'Use the multiply tool to multiply 19 by 17, then tell me the product.'}], 'max_tokens': 1024, 'model': 'nodecode-cyber-v1', 'stream': True, 'tools': [{'name': 'multiply', 'description': 'Multiply two integers', 'input_schema': {'type': 'object', 'properties': {'a': {'type': 'integer'}, 'b': {'type': 'integer'}}, 'required': ['a', 'b']}}]}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'Use the multiply tool to multiply 19 by 17, then tell me the product.'}, {'role': 'assistant', 'content': [{'type': 'thinking', 'thinking': 'We need use multiply tool. Call multiply 19 17.', 'signature': ''}, {'type': 'tool_use', 'id': 'chatcmpl-tool-87990fa965d67a82', 'name': 'multiply', 'input': {'a': 19, 'b': 17}}]}, {'role': 'user', 'content': [{'type': 'tool_result', 'tool_use_id': 'chatcmpl-tool-87990fa965d67a82', 'content': '323'}]}], 'max_tokens': 1024, 'model': 'nodecode-cyber-v1', 'stream': True, 'tools': [{'name': 'multiply', 'description': 'Multiply two integers', 'input_schema': {'type': 'object', 'properties': {'a': {'type': 'integer'}, 'b': {'type': 'integer'}}, 'required': ['a', 'b']}}]}
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v1', 'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_completion_tokens': 2048, 'reasoning_effort': 'none', 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v1', 'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_completion_tokens': 2048, 'reasoning_effort': 'max', 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_tokens': 2048, 'model': 'nodecode-cyber-v1', 'stream': False}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_tokens': 2048, 'model': 'nodecode-cyber-v1', 'stream': False, 'thinking': {'type': 'disabled'}}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_tokens': 2048, 'model': 'nodecode-cyber-v1', 'stream': False, 'thinking': {'type': 'disabled'}}
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v1', 'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_completion_tokens': 64, 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v0', 'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_completion_tokens': 64, 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v1', 'messages': [{'role': 'system', 'content': '<reference notes, about 2.9k tokens>'}, {'role': 'user', 'content': 'Reply with the word ready.'}], 'max_completion_tokens': 256, 'reasoning_effort': 'none', 'prompt_cache_key': 'proof-proxy-2d653a20acfe', 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v1', 'messages': [{'role': 'system', 'content': '<reference notes, about 2.9k tokens>'}, {'role': 'user', 'content': 'Reply with the word ready.'}, {'role': 'assistant', 'content': 'ready'}, {'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_completion_tokens': 256, 'reasoning_effort': 'none', 'prompt_cache_key': 'proof-proxy-2d653a20acfe', 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v1', 'messages': [{'role': 'system', 'content': '<reference notes, about 2.9k tokens>'}, {'role': 'user', 'content': 'Reply with the word ready.'}, {'role': 'assistant', 'content': 'ready'}, {'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}, {'role': 'assistant', 'content': '323'}, {'role': 'user', 'content': 'Add 1 to your previous answer. Answer with the number only.'}], 'max_completion_tokens': 256, 'reasoning_effort': 'none', 'prompt_cache_key': 'proof-proxy-2d653a20acfe', 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v1', 'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_completion_tokens': 64, 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1/responses
+{'model': 'nodecode-cyber-v1', 'input': 'What is 19 * 17? Answer with the number only.', 'max_output_tokens': 64}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_tokens': 64, 'model': 'nodecode-cyber-v1', 'stream': False}
+
+POST https://api.nodecode.ai/v1
+
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v0', 'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_completion_tokens': 64, 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1/responses
+{'model': 'nodecode-cyber-v0', 'input': 'What is 19 * 17? Answer with the number only.', 'max_output_tokens': 64}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_tokens': 64, 'model': 'nodecode-cyber-v0', 'stream': False}
+
+POST https://api.nodecode.ai/v1
+
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_tokens': 2048, 'model': 'nodecode-cyber-v1', 'stream': False}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_tokens': 2048, 'model': 'nodecode-cyber-v1', 'stream': False, 'thinking': {'type': 'enabled', 'budget_tokens': 1024}}
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v1', 'messages': [{'role': 'system', 'content': '<reference notes, about 2.9k tokens>'}, {'role': 'user', 'content': 'Reply with the word ready.'}], 'max_completion_tokens': 256, 'reasoning_effort': 'none', 'prompt_cache_key': 'proof-chat-proxy-9ce263a281cd', 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v1', 'messages': [{'role': 'system', 'content': '<reference notes, about 2.9k tokens>'}, {'role': 'user', 'content': 'Reply with the word ready.'}, {'role': 'assistant', 'content': 'ready'}, {'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_completion_tokens': 256, 'reasoning_effort': 'none', 'prompt_cache_key': 'proof-chat-proxy-9ce263a281cd', 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v1', 'messages': [{'role': 'system', 'content': '<reference notes, about 2.9k tokens>'}, {'role': 'user', 'content': 'Reply with the word ready.'}, {'role': 'assistant', 'content': 'ready'}, {'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}, {'role': 'assistant', 'content': '323'}, {'role': 'user', 'content': 'Add 1 to your previous answer. Answer with the number only.'}], 'max_completion_tokens': 256, 'reasoning_effort': 'none', 'prompt_cache_key': 'proof-chat-proxy-9ce263a281cd', 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1/responses
+{'model': 'nodecode-cyber-v1', 'input': [{'role': 'user', 'content': 'Reply with the word ready.'}], 'instructions': '<reference notes, about 2.9k tokens>', 'max_output_tokens': 256, 'reasoning': {'effort': 'none'}, 'prompt_cache_key': 'proof-responses-proxy-82a86e1ee7c9'}
+
+POST https://api.nodecode.ai/v1/responses
+{'model': 'nodecode-cyber-v1', 'input': [{'role': 'user', 'content': 'Reply with the word ready.'}, {'role': 'assistant', 'content': 'ready'}, {'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'instructions': '<reference notes, about 2.9k tokens>', 'max_output_tokens': 256, 'reasoning': {'effort': 'none'}, 'prompt_cache_key': 'proof-responses-proxy-82a86e1ee7c9'}
+
+POST https://api.nodecode.ai/v1/responses
+{'model': 'nodecode-cyber-v1', 'input': [{'role': 'user', 'content': 'Reply with the word ready.'}, {'role': 'assistant', 'content': 'ready'}, {'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}, {'role': 'assistant', 'content': '323'}, {'role': 'user', 'content': 'Add 1 to your previous answer. Answer with the number only.'}], 'instructions': '<reference notes, about 2.9k tokens>', 'max_output_tokens': 256, 'reasoning': {'effort': 'none'}, 'prompt_cache_key': 'proof-responses-proxy-82a86e1ee7c9'}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'Reply with the word ready.'}], 'max_tokens': 256, 'model': 'nodecode-cyber-v1', 'stream': False, 'system': '<reference notes, about 2.9k tokens>', 'thinking': {'type': 'disabled'}}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'Reply with the word ready.'}, {'role': 'assistant', 'content': 'ready'}, {'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_tokens': 256, 'model': 'nodecode-cyber-v1', 'stream': False, 'system': '<reference notes, about 2.9k tokens>', 'thinking': {'type': 'disabled'}}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'Reply with the word ready.'}, {'role': 'assistant', 'content': 'ready'}, {'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}, {'role': 'assistant', 'content': '323'}, {'role': 'user', 'content': 'Add 1 to your previous answer. Answer with the number only.'}], 'max_tokens': 256, 'model': 'nodecode-cyber-v1', 'stream': False, 'system': '<reference notes, about 2.9k tokens>', 'thinking': {'type': 'disabled'}}
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v1', 'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_completion_tokens': 2048, 'reasoning_effort': 'none', 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1/
+{'model': 'nodecode-cyber-v1', 'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_completion_tokens': 2048, 'reasoning_effort': 'max', 'extra_body': {}}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_tokens': 2048, 'model': 'nodecode-cyber-v1', 'stream': False}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_tokens': 2048, 'model': 'nodecode-cyber-v1', 'stream': False, 'thinking': {'type': 'disabled'}}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_tokens': 2048, 'model': 'nodecode-cyber-v1', 'stream': False, 'thinking': {'type': 'disabled'}}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_tokens': 2048, 'model': 'nodecode-cyber-v1', 'stream': False}
+
+POST https://api.nodecode.ai/v1/messages
+{'messages': [{'role': 'user', 'content': 'What is 19 * 17? Answer with the number only.'}], 'max_tokens': 2048, 'model': 'nodecode-cyber-v1', 'stream': False, 'thinking': {'type': 'enabled', 'budget_tokens': 1024}}

@@ -1,0 +1,52 @@
+HTTP/1.1 200 OK
+date: Thu, 26 Nov 2026 04:14:05 GMT
+content-length: 1259
+content-type: application/json
+x-litellm-call-id: 97d2d49b-c836-44dd-b506-e16e4f0ccd12
+x-litellm-model-id: 1f38c0a3e1ad932d86015ba16775e5a1e2d7a24f64d1e5a9e917a88c7c07e056
+x-litellm-model-name: nodecode/nodecode-cyber-v1
+x-litellm-model-api-base: https://api.nodecode.ai/v1
+x-litellm-version: 1.113.0
+x-litellm-response-cost: 0.00012507000000000002
+x-litellm-response-cost-original: 0.00012507000000000002
+x-litellm-response-cost-discount-amount: 0.0
+x-litellm-response-cost-margin-amount: 0.0
+x-litellm-response-cost-margin-percent: 0.0
+x-litellm-response-cost-input: 1.1550000000000001e-05
+x-litellm-response-cost-output: 0.00011352000000000001
+x-litellm-response-cost-reasoning: 7.92e-05
+x-litellm-response-cost-tool-usage: 0.0
+x-litellm-key-spend: 0.00012507000000000002
+x-litellm-response-duration-ms: 645.3850269317627
+x-litellm-overhead-duration-ms: 7.9341
+x-litellm-callback-duration-ms: 0.0
+llm_provider-date: Thu, 26 Nov 2026 04:14:06 GMT
+llm_provider-content-type: application/json
+llm_provider-transfer-encoding: chunked
+llm_provider-connection: keep-alive
+llm_provider-server: BunnyCDN-AMS1-883
+llm_provider-cdn-pullzone: 6869918
+llm_provider-cdn-requestcountrycode: NL
+llm_provider-access-control-allow-origin: *
+llm_provider-cache-control: no-store
+llm_provider-content-encoding: br
+llm_provider-via: 1.1 Caddy
+llm_provider-strict-transport-security: max-age=31536000
+llm_provider-x-request-id: 01a2160f-8838-7fa3-91c9-9562d82af846
+llm_provider-cdn-proxyver: 1.74
+llm_provider-cdn-requestpullsuccess: True
+llm_provider-cdn-requestpullcode: 200
+llm_provider-cdn-cachedat: 11/26/2026 04:14:06
+llm_provider-cdn-edgestorageid: 883
+llm_provider-cdn-requestid: f1fcb49060e7728024787d6e7bfbdb8b
+llm_provider-cdn-requesttime: 0
+llm_provider-request-id: 01a2160f-8838-7fa3-91c9-9562d82af846
+request-id: 01a2160f-8838-7fa3-91c9-9562d82af846
+x-litellm-model-group: cyber-v1
+x-litellm-attempted-retries: 0
+x-litellm-attempted-fallbacks: 0
+x-frame-options: DENY
+content-security-policy: frame-ancestors 'none'
+x-content-type-options: nosniff
+
+{"id":"chatcmpl-ac2dc30ded1e4020","created":1795666446,"model":"cyber-v1","object":"chat.completion","system_fingerprint":"vllm-0.32.1rc1.dev36+ge68efc685-tp4-866259b6","choices":[{"finish_reason":"stop","index":0,"message":{"content":"Hello! 👋 Message received — looks like the LiteLLM pipeline is working. What can I help you with?","role":"assistant","reasoning_content":"The user says \"hello from litellm\". This is a«a greeting, likely a test message from someone using LiteLLM (a proxy/library for LLM APIs). I should respond friendly and briefly, maybe note that I'm receiving it. No tool use needed. Keep it short.","provider_specific_fields":{"reasoning":"The user says \"hello from litellm\". This is a«a greeting, likely a test message from someone using LiteLLM (a proxy/library for LLM APIs). I should respond friendly and briefly, maybe note that I'm receiving it. No tool use needed. Keep it short."}},"provider_specific_fields":{"token_ids":null,"weight_versions":null,"stop_reason":null},"logprobs":null,"stop_reason":null,"token_ids":null}],"usage":{"completion_tokens":86,"prompt_tokens":35,"total_tokens":121,"completion_tokens_details":{"reasoning_tokens":60},"prompt_tokens_details":{"cached_tokens":0,"created_cache_tokens":0}}}

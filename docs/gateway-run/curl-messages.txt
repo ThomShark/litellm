@@ -1,0 +1,28 @@
+HTTP/1.1 200 OK
+date: Thu, 26 Nov 2026 04:14:06 GMT
+content-length: 693
+content-type: application/json
+x-litellm-call-id: a9251929-46f8-49af-86fd-2daf879c52aa
+x-litellm-model-id: 1f38c0a3e1ad932d86015ba16775e5a1e2d7a24f64d1e5a9e917a88c7c07e056
+x-litellm-model-name: nodecode/nodecode-cyber-v1
+x-litellm-version: 1.113.0
+x-litellm-response-cost: 0.00012243
+x-litellm-response-cost-original: 0.00012243
+x-litellm-response-cost-discount-amount: 0.0
+x-litellm-response-cost-margin-amount: 0.0
+x-litellm-response-cost-margin-percent: 0.0
+x-litellm-response-cost-input: 1.1550000000000001e-05
+x-litellm-response-cost-output: 0.00011088000000000001
+x-litellm-response-cost-reasoning: 6.864000000000001e-05
+x-litellm-response-cost-tool-usage: 0.0
+x-litellm-key-spend: 0.00012243
+x-litellm-response-duration-ms: 1430.345058441162
+x-litellm-overhead-duration-ms: 36.478
+x-litellm-model-group: cyber-v1
+x-litellm-attempted-retries: 0
+x-litellm-attempted-fallbacks: 0
+x-frame-options: DENY
+content-security-policy: frame-ancestors 'none'
+x-content-type-options: nosniff
+
+{"id":"msg_01a2160f8ada76338c70dcd2c4bb7fd6","type":"message","role":"assistant","model":"cyber-v1","content":[{"type":"thinking","thinking":"The user says \"hello from litellm\". This is a\na simple greeting. They're likely testing connectivity with LiteLLM (a proxy/gateway for LLMs). I should respond friendly and briefly, maybe acknowledge it. No tools needed.","signature":""},{"type":"text","text":"Hello! 👋 Greetings back from the other side of the LiteLLM gateway — connection looks good.\n\nWhat can I help you with today?"}],"stop_reason":"end_turn","stop_sequence":null,"usage":{"input_tokens":35,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":84}}

@@ -1,0 +1,13 @@
+Title: docs(providers): add Nodecode provider page
+
+---
+
+Adds the provider page for Nodecode, the `nodecode/` route that BerriAI/litellm#51269 adds as a JSON-configured OpenAI-compatible provider. That PR ships the `nodecode/nodecode-cyber-v1` cost map row and the `NODECODE_API_KEY` and `NODECODE_API_BASE` settings this page documents, so the two should land together.
+
+The page covers key setup, the one model with the context window, output cap and per 1M token prices from the code PR's cost map, and the `reasoning_effort` levels the API accepts, from `none` to `max`. The SDK examples show chat completions, streaming, tool calling, reasoning effort and a `json_schema` response format. The Gateway section has a `config.yaml` with OpenAI SDK and cURL tabs, the Admin UI Add Model flow, and `/v1/messages` and `/v1/responses` examples. Those two routes reach Nodecode's own endpoints instead of the chat completions bridge. The cost tracking section also says where tracked spend differs from the Nodecode bill, which is the weekend half price and the 4x cache read rate on requests over 262,144 input tokens.
+
+`sidebars.js` registers `providers/nodecode` after `providers/nlp_cloud`, and `docs/proxy/config_settings.md` gains `NODECODE_API_BASE` and `NODECODE_API_KEY` rows after `NLP_CLOUD_API_BASE`. As on the ResetData page, the provider catalog card in `src/data/providerCapabilities.json` and the display name in `mcp/models-data.js` list Nodecode before the deploy time refresh picks it up from litellm main. The page and both rows carry `<SinceVersion v="1.113.0" />` because that is the next release, so the badge needs a bump if the code PR ships later.
+
+I ran every Python example on the page with the SDK at the code PR's tip (`428e320fee`) against the live API, and the Gateway examples against a local proxy started from the same tip with the page's `config.yaml`. Every call returned 200. The chat call's `x-litellm-response-cost` header read $0.00012507 for 35 input and 86 output tokens, which matches the cost map, and a repeated 1,947 token prompt came back with 1,920 cached tokens billed at the cache read rate. The SDK's `responses()` and `anthropic.messages.acreate()` calls posted to `https://api.nodecode.ai/v1/responses` and `https://api.nodecode.ai/v1/messages`, and the logging payload that spend logs read records provider `nodecode`.
+
+`npm run build`, `npm run lint:writing`, `npm run lint:docs`, the version badge check against `main` and the other docs checks pass locally. `npm run test:endpoints` fails on `main` too, since `search/webiq` is in the sidebar but not in `src/data/endpoints.js`, and CI only warns on it.
